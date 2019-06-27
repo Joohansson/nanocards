@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "NotoSans Bold";
+    src:
+    url("../fonts/NotoSans-Bold.woff"), /* Pretty Modern Browsers */
+    url("../fonts/NotoSans-Bold.woff2"), /* Super Modern Browsers */
+    url("../fonts/NotoSans-Bold.eot"),
+    url("../fonts/NotoSans-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/NotoSans-Bold.eot?#iefix") format("embedded-opentype"); /* IE6-IE8 */
+}
+
+@font-face {
+  font-family: "NotoSans Regular";
+    src:
+    url("../fonts/NotoSans-Regular.woff"), /* Pretty Modern Browsers */
+    url("../fonts/NotoSans-Regular.woff2"), /* Super Modern Browsers */
+    url("../fonts/NotoSans-Regular.eot"),
+    url("../fonts/NotoSans-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/NotoSans-Regular.eot?#iefix") format("embedded-opentype"); /* IE6-IE8 */
+}
+
+.card-div {
+    width: 154px;
+    height: 240px;
+    background: no-repeat center;
+    display: inline-block;
+}
+
+.card-div--logo {
+    max-width: 25%;
+    margin: 0 auto;
+}
+
+.card-div--background {
+    object-fit: none; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-div--qr {
+    position: relative;
+    top: 111px;
+    left: 43px;
+    height: 66x;
+    width: 66px;
+}
+
+.card-div--msg {
+  position: relative;
+  top: -25px;
+  width: 135px;
+  text-align: center;
+  color: #4a90e2;
+  font-size: 10px;
+  line-height: 10px;
+  font-family: 'NotoSans Bold';
+  word-wrap: break-word;
+  display: inline-grid;
+  margin-bottom: 0;
+}
