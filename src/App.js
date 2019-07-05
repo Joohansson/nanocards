@@ -8,6 +8,7 @@ import { Wallet } from 'rai-wallet'
 import domtoimage from 'dom-to-image'
 import $ from 'jquery'
 import bigInt from 'big-integer'
+import ReactGA from 'react-ga'
 
 import logo from './img/logo.png'
 import donation from './img/donation.png'
@@ -151,6 +152,10 @@ class App extends Component {
   }
 
   componentDidMount() {
+    //Init Google analytics
+    ReactGA.initialize('UA-113887773-7');
+    ReactGA.pageview('/homepage');
+
     this.generateNewWallet();
 
     //Set initial card texts and payment amounts
