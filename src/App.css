@@ -144,7 +144,7 @@ html {
 }
 
 .style-group > form {
-  width: 550px;
+  width: 580px;
   text-align: right;
 }
 
@@ -220,7 +220,7 @@ html {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   text-align: left;
-  margin: 0 auto 0 auto !important;
+  margin: 10px auto 0 auto !important;
 }
 
 /********************************************************************************************************************************************

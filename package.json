@@ -2,6 +2,8 @@
   "name": "nano-cards",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
+  "license": "MIT",
   "dependencies": {
     "big-integer": "^1.6.44",
     "bootstrap": "^4.3.1",

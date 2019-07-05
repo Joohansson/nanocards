@@ -359,7 +359,7 @@ class App extends Component {
     $(document).psendmodal();
     var content =  '<div class="public_link_modal">'+
               '<strong>Who is hosting this service?</strong><br/>'+
-              'A community manager for the Nano Foundation, moderator of <a href="https://www.reddit.com/r/nanocurrency">/r/nanocurrency</a> / <a href="https://chat.nano.org/">nano discord</a> and creator of some other services like <a href="https://nanolinks.info">Nano Links</a> and <a href="https://github.com/Joohansson/NanoNodeGraphics">Nano Node Graphics</a>.<br/>'+
+              'A community manager for the Nano Foundation, moderator of <a href="https://www.reddit.com/r/nanocurrency">/r/nanocurrency</a> / <a href="https://chat.nano.org/">nano discord</a> and creator of some other services like <a href="https://nanolinks.info">Nano Links</a>, <a href="https://nanogift.me/">NanoGift</a> and <a href="https://github.com/Joohansson/NanoNodeGraphics">Nano Node Graphics</a>.<br/>'+
               '<br/>If you find any bugs or have feedback, please don\'t hesitate to contact me at reddit or discord! You find me under alias Joohansson or Json.';
     var title 	= 'ABOUT OWNER';
     $('.modal_title span').html(title);
@@ -543,19 +543,59 @@ class App extends Component {
         </header>
 
         <div className="noprint">
-          <Button variant="primary" onClick={this.collapse} className="first-btn">How to use</Button>
+          <Button variant="primary" onClick={this.collapse} className="first-btn">HOW TO</Button>
           <div className="collapse-content">
-              <strong>The seed is not stored but for increased security you can download <a href="https://github.com/Joohansson/nano-giftcard/raw/master/nano-paper-wallet.zip">this zip</a>, disconnect your internet connection, extract the zip and open index.html in an safe OS environment. <br /></strong>
-              <br />
-              <ol>
-                  <li>Press "Generate new Seed".</li>
-                  <li>Send funds to the displayed address with any <a href="https://nanolinks.info/#wallets">Nano Wallet</a>. Scan QR, click QR to copy or click the deep link.</li>
-                  <li>Optional: Provide a name and message for the recipient and choose a theme.</li>
-                  <li>Print, Download, Share or snapshot the screen. Zoom page 200% for best quality.</li>
-                  <li>If making a small card, make sure QR are readable before giving it away!</li>
-                  <li>Check the account status: Transaction arrived and unpocketed and later redeemed with 0 balance left.</li>
-              </ol>
+            <strong>What are Nano Cards?<br /></strong>
             <br />
+            <ul>
+              <li>A free printable card game where you pay/win a feeless cryptocurrency (Nano) to/from a unique mutual account (pot)</li>
+              <li>The winner will receive the full pot in each game</li>
+              <li>A wallet that can both pay and receive Nano by QR is required like <a href="https://natrium.io/">Natrium</a></li>
+            </ul>
+
+            <strong>How to create your own Deck of Nano Cards<br /></strong>
+            <br />
+            <ol>
+              <li>Choose a Theme</li>
+              <li>Input a custom min/max Nano penalty (paid per card)</li>
+              <li>Hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>
+              <li>Download images or directly print each of the 7 sheets (plus optional back and instruction sheets)</li>
+              <li>For correct card size: Print on landscape A4 (thick paper) with small margins or 555 DPI</li>
+              <li>Cut the cards (sharp razor blade and ruler recommended)</li>
+            </ol>
+            <br />
+            <strong>How to Play<br /></strong>
+            <ol>
+              <li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>
+              <li>Shuffle and give 5 cards to each player (hidden)</li>
+              <li>Place the remaining stack on a table face down</li>
+              <li>Each player (in sequence) will take one card from the stack and play one card from hand (placed visible on the table)</li>
+              <li>The game is over and can reset when the PAYOUT card(s) has been claimed</li>
+              <li>Winner take all Nano!</li>
+            </ol>
+            <br />
+            <strong>Card Index<br /></strong>
+            <ul>
+              <li>PAYOUT (Green): Scan to sweep full amount (Natrium: "Load from paper wallet"). Game over.</li>
+              <li>PENALTY (Black): Scan to pay (random) amount encoded in the QR.</li>
+              <li>DATA BREACH (Red): Scan to pay (max) amount encoded in the QR. Can be blocked by a FIREWALL.</li>
+              <li>HACKER:<br />1. Steal one random card from an opponent<br />2. Force an opponent to pay one of your PENALTY or DATA BREACH cards.</li>
+              <li>FIREWALL:<br />1. Block someone from stealing a card<br />2. Block someone who tries to force a PENALTY or BREACH<br />3. Destroy one DATA BREACH card</li>
+              <li>DISCONNECTED: Skip one turn</li>
+              <li>DOUBLE SPEED: Next player will take two cards from the stack (and play two)</li>
+            </ul>
+            <br />
+            <strong>Special Rules<br /></strong>
+            <ul>
+              <li>PAYOUT can be saved for later to accumulate more Nano, but can also be stolen!</li>
+              <li>No player may ever have more than 5 cards on hand. Also no less than 5 if there is still a stack.</li>
+              <li>A card can only be used one time and is always consumed.</li>
+              <li>If a card is destroyed (with a FIREWALL), consumed (HACKER) or stolen, a new card must be taken from the stack.</li>
+              <li>If the stack is empty: Players will start consume their cards on hand until someone use the PAYOUT.</li>
+              <li>If using several set of decks: All PAYOUTS must be used before the game can end.</li>
+            </ul>
+            <br />
+            <strong>No keys are ever stored anywhere but if you want optimal safety you can <a href="https://github.com/Joohansson/nanocards/raw/master/nanocards.zip">download this zip</a> and run the site locally (no web server needed). Or just plug the cable before you hit Generate.</strong>
           </div>
 
           <div className="style-group">
