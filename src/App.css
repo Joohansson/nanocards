@@ -125,6 +125,7 @@ html {
 
 .btn {
   font-size: 16px;
+  margin: 0 !important
 }
 
 .first-btn {
@@ -134,16 +135,42 @@ html {
 .style-group {
   margin-top: 15px !important;
   margin-bottom: 0;
-  display: inline-flex;
+  display: flex;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   width: 800px;
   padding-top: 0;
 }
 
-.btn-group {
-  width: 250px;
-  max-width: 250px;
+.style-group > form {
+  width: 550px;
+  text-align: right;
+}
+
+.print-group {
+  margin-top: 0 !important;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  padding-top: 0;
+}
+
+.print-btn-group {
+  width: 550px !important;
+  text-align: right;
+}
+
+.print-btn {
+  width: 200px !important;
+  margin-right: 20px !important;
+}
+
+.download-btn {
+  width: 200px !important;
 }
 
 #card-min, #card-max {
@@ -156,40 +183,10 @@ html {
 
 .card-area {
   width: 801px;
-  height: 566px;
-  padding-top: 43px;
+  height: 488px;
 }
 .card-dummy {
   width: 50px;
-}
-
-.print-group {
-  margin-top: 0;
-  margin-bottom: 0;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 800px;
-  padding-top: 0;
-}
-
-.print-btn {
-  margin: 1rem 0 0 0 !important;
-  width: 200px !important;
-  margin-right: 50px !important;
-}
-
-.download-btn {
-  margin: 1rem 0 0 0 !important;
-  width: 200px !important;
-  margin-left: 50px !important;
-  margin-right: 50px !important;
-}
-
-.share-btn {
-  margin: 1rem 0 0 0 !important;
-  width: 200px !important;
-  margin-left: 50px !important;
 }
 
 .home-btn {
@@ -200,7 +197,7 @@ html {
 }
 
 .extra {
-  height: 30px;
+  height: 40px;
 }
 
 .logo {
@@ -214,10 +211,6 @@ html {
 
 .hidden {
   display: none;
-}
-
-.remove {
-  display: block;
 }
 
 /* Collapsible div */

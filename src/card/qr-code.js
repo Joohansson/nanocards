@@ -12,7 +12,7 @@ export default class QrCode {
     }
 }
 // avoid that closure compiler strips these away
-QrCode['render'] = QrCode.render;
+//QrCode['render'] = QrCode.render; //Joohansson edit
 window.self['QrCode'] = QrCode;
 
 
@@ -254,6 +254,7 @@ window.self['QrCode'] = QrCode;
         var settings = {};
         Object.assign(settings, defaults, options);
         // map real names to minifyable properties used by closure compiler
+        /* Joohansson edit
         settings.minVersion = settings['minVersion'];
         settings.maxVersion = settings['maxVersion'];
         settings.ecLevel = settings['ecLevel'];
@@ -265,6 +266,7 @@ window.self['QrCode'] = QrCode;
         settings.text = settings['text'];
         settings.radius = settings['radius'];
         settings.quiet = settings['quiet'];
+        */
 
         if ($element instanceof HTMLCanvasElement) {
             if ($element.width !== settings.size || $element.height !== settings.size) {
@@ -556,7 +558,7 @@ window.self['QrCode'] = QrCode;
                 }
 
                 var totalCodeCount = 0;
-                
+
                 for (i = 0; i < rsBlocks.length; i += 1) {
                     totalCodeCount += rsBlocks[i].totalCount;
                 }

@@ -1,5 +1,5 @@
 
 import Card from './Card.js';
-import Themes from './Themes.js';
+import CardTypes from './CardTypes.js';
 
-export {Card, Themes};
+export {Card, CardTypes};

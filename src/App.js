@@ -1,47 +1,166 @@
-import React, { Component } from 'react';
-import { Dropdown, DropdownButton, Button, Form, Row, Col } from 'react-bootstrap';
-import './App.css';
-import './print.css';
-import { Card, Themes } from './card';
-import { saveAs } from 'file-saver';
-import { Wallet } from 'rai-wallet';
-import domtoimage from 'dom-to-image';
-import $ from 'jquery';
+import React, { Component } from 'react'
+import { Dropdown, DropdownButton, Button, Form, Row, Col } from 'react-bootstrap'
+import './App.css'
+import './print.css'
+import { Card, CardTypes } from './card'
+import { saveAs } from 'file-saver'
+import { Wallet } from 'rai-wallet'
+import domtoimage from 'dom-to-image'
+import $ from 'jquery'
+import bigInt from 'big-integer'
 
-import logo from './img/logo.png';
-import donation from './img/donation.png';
+import logo from './img/logo.png'
+import donation from './img/donation.png'
 
 class App extends Component {
 
   constructor(props) {
-
     super(props);
+
+    this.themes = ['Light', 'Dark']
+    this.sheets = ['1', '2', '3', '4', '5', '6', '7']
+    this.cardTextsPay = [
+      'A ninja took your computer and cracked your wallet',
+      'Global bear market',
+      'Mobile crashed and the seed was not saved',
+      'Price fell to 2k',
+      'Buy high and sell low is the way to go',
+      'A dog ate your hardware wallet and pass phrase',
+      'You got social engineered by an online friend',
+      'You have too much wealth and want to donate some',
+      'You forgot to lock your wallet after visiting an Internet café',
+      'You have suffered a stolen!',
+      'You want to fund a cool project right now',
+      'You got raigunned in NanoQuake',
+      'You wrote down the wrong seed',
+      'You showed your paper wallet at a party and don\'t remember the rest',
+      'Seed, what is that? Can I get a refund please?',
+      'You got a call from Nano Help Desk and gave them your seed',
+      'A friend borrowed your phone and didn\'t give it back',
+      'You sent Nano to rep node by mistake',
+      'You bought a Lambo and crashed it',
+      'You want to give Nano to a stranger',
+    ]
+
+    this.cardTextsPayData = [
+      'Virus targeting private keys!',
+      'Malicious code infecting password managers!',
+      '2FA deactivated and email compromised!',
+      'NSA hack initialized!',
+      'Downloaded file resulting in a black screen!',
+    ]
+
+    this.cardSheets =
+    [
+      //Light theme
+      [
+        [
+          this.getCardByName("Payout_w"), this.getCardByName("Pay_data_w"), this.getCardByName("Pay_data_w"), this.getCardByName("Pay_data_w"),
+          this.getCardByName("Pay_data_w"), this.getCardByName("Pay_data_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
+        ],
+        [
+          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
+          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
+        ],
+        [
+          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
+          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
+        ],
+        [
+          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"),
+          this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"),
+        ],
+        [
+          this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"),
+          this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"),
+        ],
+        [
+          this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"),
+          this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"),
+        ],
+        [
+          this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Disconnected_w"),
+          this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"),
+        ]
+      ],
+      //Dark theme
+      [
+        [
+          this.getCardByName("Payout_b"), this.getCardByName("Pay_data_b"), this.getCardByName("Pay_data_b"), this.getCardByName("Pay_data_b"),
+          this.getCardByName("Pay_data_b"), this.getCardByName("Pay_data_b"), this.getCardByName("Pay_b"), this.getCardByName("Pay_b"),
+        ],
+        [
+          this.getCardByName("Pay_b"), this.getCardByName("Pay_b"), this.getCardByName("Pay_b"), this.getCardByName("Pay_b"),
+          this.getCardByName("Pay_b"), this.getCardByName("Pay_b"), this.getCardByName("Pay_b"), this.getCardByName("Pay_b"),
+        ],
+        [
+          this.getCardByName("Pay_b"), this.getCardByName("Pay_b"), this.getCardByName("Pay_b"), this.getCardByName("Pay_b"),
+          this.getCardByName("Pay_b"), this.getCardByName("Pay_b"), this.getCardByName("Pay_b"), this.getCardByName("Pay_b"),
+        ],
+        [
+          this.getCardByName("Pay_b"), this.getCardByName("Pay_b"), this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"),
+          this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"),
+        ],
+        [
+          this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"),
+          this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"),
+        ],
+        [
+          this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"),
+          this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"),
+        ],
+        [
+          this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Disconnected_b"),
+          this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"),
+        ]
+      ]
+    ]
+
+    this.valueMin = '0.1'
+    this.valueMax = '1.0'
+
+    this.randomPayments = this.randomizePayments(this.valueMin,this.valueMax)
+
     this.state = {
       validated: false,
       seed: '',
       account: '',
-      activeTheme: Themes[0],
-      paperWalletImageData: '',
-      valueMin: '0.1',
-      valueMax: '1.0',
+      activeTheme: this.themes[0],
       activeThemeId: 0,
+      activeCardTypes: this.cardSheets[0][0],
+      activeCardTexts: [],
+      activeSheet: this.sheets[0],
+      activeSheetId: '0',
+      activePayments: [0,0,0,0,0,0,0,0],
+      cardImageData: '',
+      valueMin: this.valueMin,
+      valueMax: this.valueMax,
       valueMaxLength: 10,
-      donationPath: donation,
-      qrSize: 200,
+      donationPath: donation
     };
 
-    this.componentDidMount = this.componentDidMount.bind(this);
-    this.print = this.print.bind(this);
-    this.showDonateModal = this.showDonateModal.bind(this);
-    this.selectTheme = this.selectTheme.bind(this);
-    this.handleSeedChange = this.handleSeedChange.bind(this);
-    this.generateNewWallet = this.generateNewWallet.bind(this);
-
-    this.cardText = ['A ninja took your computer and cracked your wallet', 'Global bear depression', 'Mobile crashed and the seed was not saved']
+    this.componentDidMount = this.componentDidMount.bind(this)
+    this.print = this.print.bind(this)
+    this.showDonateModal = this.showDonateModal.bind(this)
+    this.selectTheme = this.selectTheme.bind(this)
+    this.selectSheet = this.selectSheet.bind(this)
+    this.handleSeedChange = this.handleSeedChange.bind(this)
+    this.generateNewWallet = this.generateNewWallet.bind(this)
+    this.getRandomPayment = this.getRandomPayment.bind(this)
+    this.randomizePayments = this.randomizePayments.bind(this)
   }
 
   componentDidMount() {
-    this.generateNewWallet(null, false);
+    this.generateNewWallet();
+
+    //Set initial card texts and payment amounts
+    this.shuffle(this.cardTextsPay)
+    this.shuffle(this.cardTextsPayData)
+    this.setState({
+      activeCardTexts: ['',this.cardTextsPayData[0],this.cardTextsPayData[1],this.cardTextsPayData[2],this.cardTextsPayData[3],this.cardTextsPayData[4],this.cardTextsPay[0],this.cardTextsPay[1]],
+      activePayments: ['0',this.nanoToRaw(this.valueMax),this.nanoToRaw(this.valueMax),this.nanoToRaw(this.valueMax),
+      this.nanoToRaw(this.valueMax),this.nanoToRaw(this.valueMax),this.randomPayments[0],this.randomPayments[1]]
+    })
 
     /* Define share link modal jquery function */
     $.fn.psendmodal = function() {
@@ -86,14 +205,111 @@ class App extends Component {
     };
   }
 
+   /* Action when generate new cards */
   handleSubmit(event) {
     event.preventDefault()
     const form = event.currentTarget;
+
+    //Check if valid integer
     if (form.checkValidity() === false) {
       event.stopPropagation()
+      return
     }
-    this.setState({ validated: true })
-    this.generateNewWallet(event,false)
+    let min = form.minVal.value
+    let max = form.maxVal.value
+
+    if (isNaN(min) || isNaN(max)) {
+      alert("Not valid number")
+      event.stopPropagation()
+      this.setState({
+        validated: false
+      })
+      return
+    }
+
+    if (min > max) {
+      alert("Max must be larger than Min")
+      event.stopPropagation()
+      this.setState({
+        validated: false
+      })
+      return
+    }
+
+    if (min < 0.000001) {
+      alert("Smallest payment amount 0.000001")
+      event.stopPropagation()
+      this.setState({
+        validated: false
+      })
+      return
+    }
+
+    this.setState({
+      validated: true,
+      valueMin: form.minVal.value,
+      valueMax: form.maxVal.value
+     })
+
+    this.generateNewWallet(form.minVal.value, form.maxVal.value, false)
+  }
+
+  /* Shuffle a given array */
+  shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  }
+
+  /* Calculate random payment [in raw string] based on min and max values */
+  getRandomPayment(min,max) {
+    let nano = bigInt(Math.floor((Math.random() * (parseFloat(max) - parseFloat(min)) + parseFloat(min))*1000000)) //round to 1 million to get max 6 decimals
+    let raw = nano.times('1000000000000000000000000').toString()
+    return raw
+  }
+
+  /* Return array of randomized values */
+  randomizePayments(min,max) {
+    return [
+      this.getRandomPayment(min,max),this.getRandomPayment(min,max),this.getRandomPayment(min,max),this.getRandomPayment(min,max),
+      this.getRandomPayment(min,max),this.getRandomPayment(min,max),this.getRandomPayment(min,max),this.getRandomPayment(min,max),
+      this.getRandomPayment(min,max),this.getRandomPayment(min,max),this.getRandomPayment(min,max),this.getRandomPayment(min,max),
+      this.getRandomPayment(min,max),this.getRandomPayment(min,max),this.getRandomPayment(min,max),this.getRandomPayment(min,max),
+      this.getRandomPayment(min,max),this.getRandomPayment(min,max),this.getRandomPayment(min,max),this.getRandomPayment(min,max),
+    ]
+  }
+
+  /* Get raw amount [string] from Mnano */
+  nanoToRaw(nano) {
+    return bigInt(parseFloat(nano)).times('1000000000000000000000000000000').toString()
+  }
+
+  /* Get qr content for nano payment */
+  getQrPayment(account,raw) {
+    return "nano:" + account + "?amount=" + raw
+  }
+
+  /* Get a card type by name */
+  getCardByName(name) {
+    var card = {}
+    $.each(CardTypes, function (index, value) {
+      if(value.name === name) {
+        card = value
+        return false
+      }
+    });
+    return card
   }
 
   /* Show donate modal */
@@ -153,12 +369,89 @@ class App extends Component {
   }
 
   selectTheme(eventKey, event) {
-    this.setState({ activeThemeId: eventKey });
-    this.setState({ activeTheme: Themes[eventKey] });
+    this.setState({
+      activeThemeId: eventKey,
+      activeTheme: this.themes[eventKey],
+      activeCardTypes: this.cardSheets[eventKey][this.state.activeSheetId]
+     })
+  }
+
+  selectSheet(eventKey, event) {
+    this.setState({
+      activeSheetId: eventKey,
+      activeSheet: this.sheets[eventKey],
+      activeCardTypes: this.cardSheets[this.state.activeThemeId][eventKey]
+    });
+    this.updateCardContent(eventKey)
+  }
+
+  /* Update the content on the cards */
+  updateCardContent(eventKey) {
+    switch (eventKey) {
+      case '0':
+        this.setState({
+          activeCardTexts: ['',this.cardTextsPayData[0],this.cardTextsPayData[1],this.cardTextsPayData[2],
+          this.cardTextsPayData[3],this.cardTextsPayData[4],this.cardTextsPay[0],this.cardTextsPay[1]],
+          activePayments: ['0',this.nanoToRaw(this.valueMax),this.nanoToRaw(this.valueMax),this.nanoToRaw(this.valueMax),
+          this.nanoToRaw(this.valueMax),this.nanoToRaw(this.valueMax),this.randomPayments[0],this.randomPayments[1]]
+        });
+        break
+      case '1':
+        this.setState({
+          activeCardTexts: [this.cardTextsPay[2],this.cardTextsPay[3],this.cardTextsPay[4],this.cardTextsPay[5],
+          this.cardTextsPay[6],this.cardTextsPay[7],this.cardTextsPay[8],this.cardTextsPay[9]],
+          activePayments: [this.randomPayments[2],this.randomPayments[3],this.randomPayments[4],this.randomPayments[5],
+          this.randomPayments[6],this.randomPayments[7],this.randomPayments[8],this.randomPayments[9]]
+        });
+        break
+      case '2':
+        this.setState({
+          activeCardTexts: [this.cardTextsPay[10],this.cardTextsPay[11],this.cardTextsPay[12],this.cardTextsPay[13],
+          this.cardTextsPay[14],this.cardTextsPay[15],this.cardTextsPay[16],this.cardTextsPay[17]],
+          activePayments: [this.randomPayments[10],this.randomPayments[11],this.randomPayments[12],this.randomPayments[13],
+          this.randomPayments[14],this.randomPayments[15],this.randomPayments[16],this.randomPayments[17]]
+        });
+        break
+      case '3':
+        this.setState({
+          activeCardTexts: [this.cardTextsPay[18],this.cardTextsPay[19],"","","","","",""],
+          activePayments: [this.randomPayments[18],this.randomPayments[19],"","","","","",""]
+        });
+        break
+      case '4':
+        this.setState({
+          activeCardTexts: ["","","","","","","",""],
+          activePayments: ["","","","","","","",""]
+        });
+        break
+      case '5':
+        this.setState({
+          activeCardTexts: ["","","","","","","",""],
+          activePayments: ["","","","","","","",""]
+        });
+        break
+      case '6':
+        this.setState({
+          activeCardTexts: ["","","","","","","",""],
+          activePayments: ["","","","","","","",""]
+        });
+        break
+      default:
+        this.setState({
+          activeCardTexts: ["","","","","","","",""],
+          activePayments: ["","","","","","","",""]
+        });
+        break
+    }
   }
 
   /* Generate wallet account and seed, update QR */
-  generateNewWallet(event, seed=false) {
+  generateNewWallet(min="0.1",max="1.0", seed=false) {
+    //Update payment content
+    this.randomPayments = this.randomizePayments(min,max)
+    this.updateCardContent(this.state.activeSheetId)
+
+    //Update seed and account
     try {
       const wallet = new Wallet();
       wallet.createWallet(seed);
@@ -189,15 +482,15 @@ class App extends Component {
     var width =  document.body.clientWidth;
     domtoimage.toPng(node, {
       width: 6408,
-      height: 4528,
+      height: 3904,
       style: {
         'transform': 'scale(8)',
-        'transform-origin': Math.round((width-800)/14)+'px 0', //The 14 is purely trial and error
+        'transform-origin': Math.round((width-800)/14)+'px -2px', //The 14 is purely trial and error
       }
     }).then(function (dataUrl) {
           var sprite = new Image();
           sprite.onload = function () {
-            this.setState({ paperWalletImageData: dataUrl });
+            this.setState({ cardImageData: dataUrl });
             window.print();
           }.bind(this);
           sprite.src = dataUrl;
@@ -211,13 +504,12 @@ class App extends Component {
   download(event) {
     var node = document.getElementsByClassName('card-area')[0];
     var width =  document.body.clientWidth;
-    console.log(width)
     domtoimage.toPng(node, {
       width: 6408,
-      height: 4528,
+      height: 3904,
       style: {
         'transform': 'scale(8)',
-        'transform-origin': Math.round((width-800)/14)+'px 0', //The 14 is purely trial and error
+        'transform-origin': Math.round((width-800)/14)+'px -2px', //The 14 is purely trial and error
       }
     }).then(function (dataUrl) {
         //var link = document.createElement('a');
@@ -250,7 +542,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
 
-        <div className="noprint remove">
+        <div className="noprint">
           <Button variant="primary" onClick={this.collapse} className="first-btn">How to use</Button>
           <div className="collapse-content">
               <strong>The seed is not stored but for increased security you can download <a href="https://github.com/Joohansson/nano-giftcard/raw/master/nano-paper-wallet.zip">this zip</a>, disconnect your internet connection, extract the zip and open index.html in an safe OS environment. <br /></strong>
@@ -267,18 +559,26 @@ class App extends Component {
           </div>
 
           <div className="style-group">
+            <DropdownButton
+              title={"Theme - " + this.state.activeTheme}
+              key={this.state.activeThemeId}
+              id={`dropdown-basic-${this.state.activeThemeId}`}>
+              {this.themes.map(function(theme, index){
+                return <Dropdown.Item eventKey={index} key={index} onSelect={this.selectTheme}>{theme}</Dropdown.Item>;
+              }.bind(this))}
+            </DropdownButton>
             <Form
               noValidate
               validated={validated}
               onSubmit={e => this.handleSubmit(e)}>
               <Row>
-                <Form.Group as={Col} md="4" controlId="validation1">
-                  <Form.Control placeholder="Min payment [Nano]" type="text" defaultValue={this.state.valueMin} required/>
-                  <Form.Control.Feedback type="invalid">Not a valid number!</Form.Control.Feedback>
+                <Form.Group as={Col} md="4">
+                  <Form.Control placeholder="Min pay [Nano]" id="minVal" type="text" defaultValue={this.state.valueMin} title="Min pay [Nano]" required/>
+                  <Form.Control.Feedback type="invalid">Please input a number</Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group as={Col} md="4" controlId="validation2">
-                  <Form.Control placeholder="Max payment [Nano]" type="text" defaultValue={this.state.valueMax} required/>
-                  <Form.Control.Feedback type="invalid">Not a valid number!</Form.Control.Feedback>
+                <Form.Group as={Col} md="4">
+                  <Form.Control placeholder="Max pay [Nano]" id="maxVal" type="text" defaultValue={this.state.valueMax} title="Max pay [Nano]" required/>
+                  <Form.Control.Feedback type="invalid">Please input a number</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group as={Col} md="4">
                   <Button variant="primary" type="submit">
@@ -290,34 +590,45 @@ class App extends Component {
           </div>
         </div>
 
-        <div className="nano-paper-wallet noprint">
+        <div className="noprint">
           <div className="card-area">
             <div className="card-dummy"></div>
-            <Card theme={this.state.activeTheme} seed={this.state.seed} account={this.state.account} name={this.state.name} msg={this.cardText[0]}/>
-            <Card theme={this.state.activeTheme} seed={this.state.seed} account={this.state.account} name={this.state.name} msg={this.cardText[1]}/>
-            <Card theme={this.state.activeTheme} seed={this.state.seed} account={this.state.account} name={this.state.name} msg={this.cardText[2]}/>
-            <Card theme={this.state.activeTheme} seed={this.state.seed} account={this.state.account} name={this.state.name} msg={this.cardText[0]}/>
+            <Card theme={this.state.activeCardTypes[0]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[0])} msg={this.state.activeCardTexts[0]}/>
+            <Card theme={this.state.activeCardTypes[1]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[1])} msg={this.state.activeCardTexts[1]}/>
+            <Card theme={this.state.activeCardTypes[2]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[2])} msg={this.state.activeCardTexts[2]}/>
+            <Card theme={this.state.activeCardTypes[3]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[3])} msg={this.state.activeCardTexts[3]}/>
             <div className="card-dummy"></div>
             <div className="card-dummy"></div>
-            <Card theme={this.state.activeTheme} seed={this.state.seed} account={this.state.account} name={this.state.name} msg={this.cardText[0]}/>
-            <Card theme={this.state.activeTheme} seed={this.state.seed} account={this.state.account} name={this.state.name} msg={this.cardText[0]}/>
-            <Card theme={this.state.activeTheme} seed={this.state.seed} account={this.state.account} name={this.state.name} msg={this.cardText[0]}/>
-            <Card theme={this.state.activeTheme} seed={this.state.seed} account={this.state.account} name={this.state.name} msg={this.cardText[0]}/>
+            <Card theme={this.state.activeCardTypes[4]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[4])} msg={this.state.activeCardTexts[4]}/>
+            <Card theme={this.state.activeCardTypes[5]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[5])} msg={this.state.activeCardTexts[5]}/>
+            <Card theme={this.state.activeCardTypes[6]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[6])} msg={this.state.activeCardTexts[6]}/>
+            <Card theme={this.state.activeCardTypes[7]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[7])} msg={this.state.activeCardTexts[7]}/>
             <div className="card-dummy"></div>
           </div>
         </div>
-        <img className="nano-paper-wallet-img hidden print" src={this.state.paperWalletImageData} alt="paper wallet" />
+        <img className="hidden print" src={this.state.cardImageData} alt="paper wallet" />
 
-        <div className="noprint print-group remove">
-          <Button onClick={this.print} variant="primary" className="print-btn">Print</Button>
-          <Button onClick={this.download} variant="primary" className="download-btn">Download</Button>
-          <Button onClick={this.showShareModal} variant="primary" className="share-btn">Share</Button>
+        <div className="noprint">
+          <div className="print-group">
+            <DropdownButton
+              title={"Sheet - " + (this.state.activeSheet)}
+              key={this.state.activeSheetId}
+              id={`dropdown-basic-${this.state.activeSheetId}`}>
+              {this.sheets.map(function(sheet, index){
+                return <Dropdown.Item eventKey={index} key={index} onSelect={this.selectSheet}>{sheet}</Dropdown.Item>;
+              }.bind(this))}
+            </DropdownButton>
+            <div className="print-btn-group">
+              <Button onClick={this.print} variant="primary" className="print-btn">Print</Button>
+              <Button onClick={this.download} variant="primary" className="download-btn">Download</Button>
+            </div>
+          </div>
         </div>
 
         <div className="extra"></div>
 
         <footer className="App-footer noprint">
-          <span className="link-span" onClick={this.showOwnerModal}>About Owner</span> | <a href="https://github.com/Joohansson/nanogift">Github</a> | <a href="https://nano.org">Nano Home</a> | <a href="https://nanolinks.info">Nano Guide</a> | <span className="link-span" onClick={this.showDonateModal}>Donate me a Cookie</span>
+          <span className="link-span" onClick={this.showOwnerModal}>About Owner</span> | <a href="https://github.com/Joohansson/nanocards">Github</a> | <a href="https://nano.org">Nano Home</a> | <a href="https://nanolinks.info">Nano Guide</a> | <span className="link-span" onClick={this.showDonateModal}>Donate me a Cookie</span>
         </footer>
       </div>
     );

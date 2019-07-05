@@ -21,6 +21,7 @@
 .card-div {
     width: 154px;
     height: 240px;
+    margin: 0 2px;
     background: no-repeat center;
     display: inline-block;
 }
@@ -42,20 +43,29 @@
     position: relative;
     top: 111px;
     left: 43px;
-    height: 66x;
+    height: 66px;
+    width: 66px;
+}
+
+.card-div--dummy {
+    position: relative;
+    top: 111px;
+    left: 43px;
+    height: 66px;
     width: 66px;
 }
 
 .card-div--msg {
   position: relative;
   top: -25px;
-  width: 135px;
+  width: 154px;
   text-align: center;
+  padding: 8px;
   color: #4a90e2;
   font-size: 10px;
   line-height: 10px;
   font-family: 'NotoSans Bold';
   word-wrap: break-word;
-  display: inline-grid;
+  display: table;
   margin-bottom: 0;
 }
