@@ -21,9 +21,9 @@
 .card-div {
     width: 154px;
     height: 240px;
-    margin: 0 2px;
+    margin: 0;
     background: no-repeat center;
-    display: inline-block;
+    display: inline-table;
 }
 
 .card-div--logo {

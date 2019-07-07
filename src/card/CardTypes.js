@@ -20,7 +20,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'none'},
       msg: '',
-      msgStyle: {color: '#000034', 'fontSize': '10px', 'lineHeight': '10px'}
+      msgStyle: {color: '#000034', 'fontSize': '10px', 'lineHeight': '10px', "paddingLeft": '15px', "paddingRight": '15px'}
     },
     {name: 'Pay_b',
       background: pay_b,
@@ -28,7 +28,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'none'},
       msg: '',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '10px', 'lineHeight': '10px'}
+      msgStyle: {color: '#FFFFFF', 'fontSize': '10px', 'lineHeight': '10px', "paddingLeft": '15px', "paddingRight": '15px'}
     },
     {name: 'Pay_data_w',
       background: pay_data_w,
@@ -36,7 +36,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'none'},
       msg: '',
-      msgStyle: {color: '#000034', 'fontSize': '10px', 'lineHeight': '10px'}
+      msgStyle: {color: '#000034', 'fontSize': '10px', 'lineHeight': '10px', "paddingLeft": '15px', "paddingRight": '15px'}
     },
     {name: 'Pay_data_b',
       background: pay_data_b,
@@ -44,7 +44,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'none'},
       msg: '',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '10px', 'lineHeight': '10px'}
+      msgStyle: {color: '#FFFFFF', 'fontSize': '10px', 'lineHeight': '10px', "paddingLeft": '15px', "paddingRight": '15px'}
     },
     {name: 'Disconnected_w',
       background: disconnected_w,
@@ -52,15 +52,15 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'DISCONNECTED',
-      msgStyle: {color: '#000034', 'fontSize': '11px', 'lineHeight': '11px'}
+      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '7px'}
     },
-    {name: 'Disconneted_b',
+    {name: 'Disconnected_b',
       background: disconnected_b,
       pubDisplay: {display: 'none'},
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'DISCONNECTED',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '11px', 'lineHeight': '11px'}
+      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '7px'}
     },
     {name: 'Double_w',
       background: double_w,
@@ -68,7 +68,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'DOUBLE SPEED',
-      msgStyle: {color: '#000034', 'fontSize': '11px', 'lineHeight': '11px'}
+      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '7px'}
     },
     {name: 'Double_b',
       background: double_b,
@@ -76,39 +76,39 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'DOUBLE SPEED',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '11px', 'lineHeight': '11px'}
+      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '7px'}
     },
     {name: 'Firewall_w',
       background: firewall_w,
       pubDisplay: {display: 'none'},
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
-      msg: 'FIREWALL ACTIVATED',
-      msgStyle: {color: '#000034', 'fontSize': '11px', 'lineHeight': '11px'}
+      msg: 'FIREWALL',
+      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '7px'}
     },
     {name: 'Firewall_b',
       background: firewall_b,
       pubDisplay: {display: 'none'},
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
-      msg: 'FIREWALL ACTIVATED',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '11px', 'lineHeight': '11px'}
+      msg: 'FIREWALL',
+      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '7px'}
     },
     {name: 'Hacker_w',
       background: hacker_w,
       pubDisplay: {display: 'none'},
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
-      msg: 'HACKER CONFIRMED',
-      msgStyle: {color: '#000034', 'fontSize': '11px', 'lineHeight': '11px'}
+      msg: 'HACKER',
+      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '7px'}
     },
     {name: 'Hacker_b',
       background: hacker_b,
       pubDisplay: {display: 'none'},
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
-      msg: 'HACKER CONFIRMED',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '11px', 'lineHeight': '11px'}
+      msg: 'HACKER',
+      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '7px'}
     },
     {name: 'Payout_w',
       background: payout_w,
@@ -116,7 +116,7 @@ export default [
       seedDisplay: {display: 'block'},
       dummyDisplay: {display: 'none'},
       msg: 'PAYOUT',
-      msgStyle: {color: '#000034', 'fontSize': '25px', 'lineHeight': '25px', 'top': '-25px'}
+      msgStyle: {color: '#000034', 'fontSize': '24px', 'lineHeight': '0', 'top': '-15px'}
     },
     {name: 'Payout_b',
       background: payout_b,
@@ -124,6 +124,6 @@ export default [
       seedDisplay: {display: 'block'},
       dummyDisplay: {display: 'none'},
       msg: 'PAYOUT',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '25px', 'lineHeight': '25px', 'top': '-25px'}
+      msgStyle: {color: '#FFFFFF', 'fontSize': '24px', 'lineHeight': '0', 'top': '-15px'}
     },
 ];

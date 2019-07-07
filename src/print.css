@@ -6,8 +6,13 @@
   .print,
   .print * {
     display: block;
+    width: 238mm;
+    height: 188mm;
   }
   .hidden.print {
     display: block !important;
+  }
 }
+@page {
+  size: auto;
 }

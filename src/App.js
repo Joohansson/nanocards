@@ -18,8 +18,8 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.themes = ['Light', 'Dark']
-    this.sheets = ['1', '2', '3', '4', '5', '6', '7']
+    this.themes = ['Dark', 'Light']
+    this.sheets = ['1', '2', '3', '4', '5', '6', '7', 'Back', 'Instructions']
     this.cardTextsPay = [
       'A ninja took your computer and cracked your wallet',
       'Global bear market',
@@ -53,37 +53,6 @@ class App extends Component {
 
     this.cardSheets =
     [
-      //Light theme
-      [
-        [
-          this.getCardByName("Payout_w"), this.getCardByName("Pay_data_w"), this.getCardByName("Pay_data_w"), this.getCardByName("Pay_data_w"),
-          this.getCardByName("Pay_data_w"), this.getCardByName("Pay_data_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
-        ],
-        [
-          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
-          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
-        ],
-        [
-          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
-          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
-        ],
-        [
-          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"),
-          this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"),
-        ],
-        [
-          this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"),
-          this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"),
-        ],
-        [
-          this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"),
-          this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"),
-        ],
-        [
-          this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Disconnected_w"),
-          this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"),
-        ]
-      ],
       //Dark theme
       [
         [
@@ -114,6 +83,38 @@ class App extends Component {
           this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Disconnected_b"),
           this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"),
         ]
+      ],
+
+      //Light theme
+      [
+        [
+          this.getCardByName("Payout_w"), this.getCardByName("Pay_data_w"), this.getCardByName("Pay_data_w"), this.getCardByName("Pay_data_w"),
+          this.getCardByName("Pay_data_w"), this.getCardByName("Pay_data_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
+        ],
+        [
+          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
+          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
+        ],
+        [
+          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
+          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Pay_w"),
+        ],
+        [
+          this.getCardByName("Pay_w"), this.getCardByName("Pay_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"),
+          this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"),
+        ],
+        [
+          this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"),
+          this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"),
+        ],
+        [
+          this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"),
+          this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"),
+        ],
+        [
+          this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Disconnected_w"),
+          this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"),
+        ]
       ]
     ]
 
@@ -137,7 +138,8 @@ class App extends Component {
       valueMin: this.valueMin,
       valueMax: this.valueMax,
       valueMaxLength: 10,
-      donationPath: donation
+      donationPath: donation,
+      isInstructionVisible: false //if the instruction sheet is visible
     };
 
     this.componentDidMount = this.componentDidMount.bind(this)
@@ -149,6 +151,53 @@ class App extends Component {
     this.generateNewWallet = this.generateNewWallet.bind(this)
     this.getRandomPayment = this.getRandomPayment.bind(this)
     this.randomizePayments = this.randomizePayments.bind(this)
+    this.download = this.download.bind(this)
+    this.print = this.print.bind(this)
+
+    this.gameIntro = '<h6><strong>What are Nano Cards?<br /></strong></h6>\
+    <ul>\
+      <li>A free printable card game where you pay/win a feeless cryptocurrency (Nano) to/from a unique mutual account (pot)</li>\
+      <li>The winner will receive the full pot in each game</li>\
+    </ul>\
+    <h6><strong>How to create your own Deck of Nano Cards<br /></strong></h6>\
+    <ol>\
+      <li>Choose a Theme</li>\
+      <li>Input a custom min/max Nano penalty (paid per card)</li>\
+      <li>Hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>\
+      <li>Download images or directly print each of the 7 sheets (plus optional back and instruction sheets)</li>\
+      <li>For correct card size: Print on landscape A4 (thick paper) with small margins or 548 DPI</li>\
+      <li>Cut the cards (razor blade and ruler recommended)</li>\
+    </ol>'
+
+    this.playInstructions = '<h6><strong>How to Play<br /></strong></h6>\
+    <ol>\
+      <li>A wallet that can both pay and receive Nano by QR is required like <a href="https://natrium.io/">Natrium</a></li>\
+      <li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>\
+      <li>Shuffle and give 5 cards to each player (hidden)</li>\
+      <li>Place the remaining stack on a table face down</li>\
+      <li>Each player (in sequence) will take one card from the stack and play one card from hand (placed visible on the table)</li>\
+      <li>The game is over and can reset when the PAYOUT card(s) has been claimed</li>\
+      <li>Winner take all Nano!</li>\
+    </ol>\
+    <h6><strong>Card Index<br /></strong></h6>\
+    <ul>\
+      <li><strong>PAYOUT (Green):</strong> Scan to sweep full amount (Natrium: "Load from paper wallet"). Game over.</li>\
+      <li><strong>PENALTY (Black):</strong> Scan to pay (random) amount encoded in the QR.</li>\
+      <li><strong>DATA BREACH (Red):</strong> Scan to pay (max) amount encoded in the QR. Can be blocked by a FIREWALL.</li>\
+      <li><strong>HACKER:</strong><br />1. Steal one random card from an opponent<br />2. Force an opponent to pay one of your PENALTY or DATA BREACH cards.</li>\
+      <li><strong>FIREWALL:</strong><br />1. Block someone from stealing a card<br />2. Block someone who tries to force a PENALTY or BREACH<br />3. Destroy one DATA BREACH card</li>\
+      <li><strong>DISCONNECTED:</strong> Skip one turn</li>\
+      <li><strong>DOUBLE SPEED:</strong> Next player will take two cards from the stack (and play two)</li>\
+    </ul>\
+    <h6><strong>Special Rules<br /></strong></h6>\
+    <ul>\
+      <li>PAYOUT can be saved for later to accumulate more Nano, but can also be stolen!</li>\
+      <li>No player may ever have more than 5 cards on hand. Also no less than 5 if there is still a stack.</li>\
+      <li>A card can only be used one time and is always consumed.</li>\
+      <li>If a card is destroyed (with a FIREWALL), consumed (HACKER) or stolen, a new card must be taken from the stack.</li>\
+      <li>If the stack is empty: Players will start consume their cards on hand until someone use the PAYOUT.</li>\
+      <li>If using several set of decks: All PAYOUTS must be used before the game can end.</li>\
+    </ul>'
   }
 
   componentDidMount() {
@@ -374,20 +423,39 @@ class App extends Component {
   }
 
   selectTheme(eventKey, event) {
-    this.setState({
-      activeThemeId: eventKey,
-      activeTheme: this.themes[eventKey],
-      activeCardTypes: this.cardSheets[eventKey][this.state.activeSheetId]
-     })
+    if (this.sheets[this.state.activeSheetId] === "Instructions") {
+      this.setState({
+        activeThemeId: eventKey,
+        activeTheme: this.themes[eventKey]
+      })
+    }
+    else {
+      this.setState({
+        activeThemeId: eventKey,
+        activeTheme: this.themes[eventKey],
+        activeCardTypes: this.cardSheets[eventKey][this.state.activeSheetId]
+      })
+    }
+
   }
 
   selectSheet(eventKey, event) {
-    this.setState({
-      activeSheetId: eventKey,
-      activeSheet: this.sheets[eventKey],
-      activeCardTypes: this.cardSheets[this.state.activeThemeId][eventKey]
-    });
-    this.updateCardContent(eventKey)
+    if (this.sheets[eventKey] === "Instructions") {
+      this.setState({
+        activeSheetId: eventKey,
+        activeSheet: this.sheets[eventKey],
+        isInstructionVisible: true,
+      })
+    }
+    else {
+      this.setState({
+        activeSheetId: eventKey,
+        activeSheet: this.sheets[eventKey],
+        activeCardTypes: this.cardSheets[this.state.activeThemeId][eventKey],
+        isInstructionVisible: false,
+      })
+      this.updateCardContent(eventKey)
+    }
   }
 
   /* Update the content on the cards */
@@ -483,14 +551,34 @@ class App extends Component {
 
   /* Print card */
   print(event) {
-    var node = document.getElementsByClassName('card-area')[0];
+    var imageWidth = 0
+    var imageHeight = 0
+    var imageCompensateX = 0
+    var imageCompensateY = 0
+
+    if (this.state.isInstructionVisible) {
+      var node = document.getElementsByClassName('instruction-area')[0];
+      imageWidth = 5144
+      imageHeight = 4056
+      imageCompensateX = -830
+      imageCompensateY = -15
+    }
+    else {
+      var node = document.getElementsByClassName('card-area')[0];
+      imageWidth = 5144
+      imageHeight = 4056
+      imageCompensateX = -830
+      imageCompensateY = -15
+    }
+
     var width =  document.body.clientWidth;
+
     domtoimage.toPng(node, {
-      width: 6408,
-      height: 3904,
+      width: imageWidth,
+      height: imageHeight,
       style: {
         'transform': 'scale(8)',
-        'transform-origin': Math.round((width-800)/14)+'px -2px', //The 14 is purely trial and error
+        'transform-origin': Math.round((width+imageCompensateX)/14)+'px '+ imageCompensateY +'px', //The 14 is purely trial and error
       }
     }).then(function (dataUrl) {
           var sprite = new Image();
@@ -507,14 +595,33 @@ class App extends Component {
 
   /* Download card */
   download(event) {
-    var node = document.getElementsByClassName('card-area')[0];
+    var imageWidth = 0
+    var imageHeight = 0
+    var imageCompensateX = 0
+    var imageCompensateY = 0
+
+    if (this.state.isInstructionVisible) {
+      var node = document.getElementsByClassName('instruction-area')[0];
+      imageWidth = 5144
+      imageHeight = 4056
+      imageCompensateX = -830
+      imageCompensateY = -15
+    }
+    else {
+      var node = document.getElementsByClassName('card-area')[0];
+      imageWidth = 5144
+      imageHeight = 4056
+      imageCompensateX = -830
+      imageCompensateY = -15
+    }
+
     var width =  document.body.clientWidth;
     domtoimage.toPng(node, {
-      width: 6408,
-      height: 3904,
+      width: imageWidth,
+      height: imageHeight,
       style: {
         'transform': 'scale(8)',
-        'transform-origin': Math.round((width-800)/14)+'px -2px', //The 14 is purely trial and error
+        'transform-origin': Math.round((width+imageCompensateX)/14)+'px '+ imageCompensateY +'px', //The 14 is purely trial and error
       }
     }).then(function (dataUrl) {
         //var link = document.createElement('a');
@@ -522,8 +629,8 @@ class App extends Component {
         //link.href = dataUrl;
         //link.click();
         /* Filesaver has better cross browser support */
-        saveAs(dataUrl, "nanogift.png");
-      })
+        saveAs(dataUrl, "nanocard_sheet_" + this.state.activeSheet + ".png");
+      }.bind(this))
       .catch(function (error) {
           console.error('oops, something went wrong!', error);
       });
@@ -550,57 +657,11 @@ class App extends Component {
         <div className="noprint">
           <Button variant="primary" onClick={this.collapse} className="first-btn">HOW TO</Button>
           <div className="collapse-content">
-            <strong>What are Nano Cards?<br /></strong>
-            <br />
-            <ul>
-              <li>A free printable card game where you pay/win a feeless cryptocurrency (Nano) to/from a unique mutual account (pot)</li>
-              <li>The winner will receive the full pot in each game</li>
-              <li>A wallet that can both pay and receive Nano by QR is required like <a href="https://natrium.io/">Natrium</a></li>
-            </ul>
-
-            <strong>How to create your own Deck of Nano Cards<br /></strong>
-            <br />
-            <ol>
-              <li>Choose a Theme</li>
-              <li>Input a custom min/max Nano penalty (paid per card)</li>
-              <li>Hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>
-              <li>Download images or directly print each of the 7 sheets (plus optional back and instruction sheets)</li>
-              <li>For correct card size: Print on landscape A4 (thick paper) with small margins or 555 DPI</li>
-              <li>Cut the cards (sharp razor blade and ruler recommended)</li>
-            </ol>
-            <br />
-            <strong>How to Play<br /></strong>
-            <ol>
-              <li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>
-              <li>Shuffle and give 5 cards to each player (hidden)</li>
-              <li>Place the remaining stack on a table face down</li>
-              <li>Each player (in sequence) will take one card from the stack and play one card from hand (placed visible on the table)</li>
-              <li>The game is over and can reset when the PAYOUT card(s) has been claimed</li>
-              <li>Winner take all Nano!</li>
-            </ol>
-            <br />
-            <strong>Card Index<br /></strong>
-            <ul>
-              <li>PAYOUT (Green): Scan to sweep full amount (Natrium: "Load from paper wallet"). Game over.</li>
-              <li>PENALTY (Black): Scan to pay (random) amount encoded in the QR.</li>
-              <li>DATA BREACH (Red): Scan to pay (max) amount encoded in the QR. Can be blocked by a FIREWALL.</li>
-              <li>HACKER:<br />1. Steal one random card from an opponent<br />2. Force an opponent to pay one of your PENALTY or DATA BREACH cards.</li>
-              <li>FIREWALL:<br />1. Block someone from stealing a card<br />2. Block someone who tries to force a PENALTY or BREACH<br />3. Destroy one DATA BREACH card</li>
-              <li>DISCONNECTED: Skip one turn</li>
-              <li>DOUBLE SPEED: Next player will take two cards from the stack (and play two)</li>
-            </ul>
-            <br />
-            <strong>Special Rules<br /></strong>
-            <ul>
-              <li>PAYOUT can be saved for later to accumulate more Nano, but can also be stolen!</li>
-              <li>No player may ever have more than 5 cards on hand. Also no less than 5 if there is still a stack.</li>
-              <li>A card can only be used one time and is always consumed.</li>
-              <li>If a card is destroyed (with a FIREWALL), consumed (HACKER) or stolen, a new card must be taken from the stack.</li>
-              <li>If the stack is empty: Players will start consume their cards on hand until someone use the PAYOUT.</li>
-              <li>If using several set of decks: All PAYOUTS must be used before the game can end.</li>
-            </ul>
+            <div dangerouslySetInnerHTML={{ __html: this.gameIntro }}></div>
+            <div dangerouslySetInnerHTML={{ __html: this.playInstructions }}></div>
             <br />
             <strong>No keys are ever stored anywhere but if you want optimal safety you can <a href="https://github.com/Joohansson/nanocards/raw/master/nanocards.zip">download this zip</a> and run the site locally (no web server needed). Or just plug the cable before you hit Generate.</strong>
+            <br/ >
           </div>
 
           <div className="style-group">
@@ -636,22 +697,25 @@ class App extends Component {
         </div>
 
         <div className="noprint">
-          <div className="card-area">
-            <div className="card-dummy"></div>
-            <Card theme={this.state.activeCardTypes[0]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[0])} msg={this.state.activeCardTexts[0]}/>
-            <Card theme={this.state.activeCardTypes[1]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[1])} msg={this.state.activeCardTexts[1]}/>
-            <Card theme={this.state.activeCardTypes[2]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[2])} msg={this.state.activeCardTexts[2]}/>
-            <Card theme={this.state.activeCardTypes[3]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[3])} msg={this.state.activeCardTexts[3]}/>
-            <div className="card-dummy"></div>
-            <div className="card-dummy"></div>
-            <Card theme={this.state.activeCardTypes[4]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[4])} msg={this.state.activeCardTexts[4]}/>
-            <Card theme={this.state.activeCardTypes[5]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[5])} msg={this.state.activeCardTexts[5]}/>
-            <Card theme={this.state.activeCardTypes[6]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[6])} msg={this.state.activeCardTexts[6]}/>
-            <Card theme={this.state.activeCardTypes[7]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[7])} msg={this.state.activeCardTexts[7]}/>
-            <div className="card-dummy"></div>
+          <div className="card-area" style={{display: this.state.isInstructionVisible ? "none":"block"}}>
+            <div>
+              <Card theme={this.state.activeCardTypes[0]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[0])} msg={this.state.activeCardTexts[0]}/>
+              <Card theme={this.state.activeCardTypes[1]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[1])} msg={this.state.activeCardTexts[1]}/>
+              <Card theme={this.state.activeCardTypes[2]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[2])} msg={this.state.activeCardTexts[2]}/>
+              <Card theme={this.state.activeCardTypes[3]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[3])} msg={this.state.activeCardTexts[3]}/>
+            </div>
+            <div>
+              <Card theme={this.state.activeCardTypes[4]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[4])} msg={this.state.activeCardTexts[4]}/>
+              <Card theme={this.state.activeCardTypes[5]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[5])} msg={this.state.activeCardTexts[5]}/>
+              <Card theme={this.state.activeCardTypes[6]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[6])} msg={this.state.activeCardTexts[6]}/>
+              <Card theme={this.state.activeCardTypes[7]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[7])} msg={this.state.activeCardTexts[7]}/>
+              </div>
+          </div>
+          <div className="instruction-area" style={{display: + this.state.isInstructionVisible ? "block":"none"}}>
+            <div dangerouslySetInnerHTML={{ __html: this.playInstructions }}></div>
           </div>
         </div>
-        <img className="hidden print" src={this.state.cardImageData} alt="paper wallet" />
+        <img className="hidden print" src={this.state.cardImageData} alt="sheet" />
 
         <div className="noprint">
           <div className="print-group">
