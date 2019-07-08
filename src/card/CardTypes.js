@@ -52,7 +52,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'DISCONNECTED',
-      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '7px'}
+      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '6px'}
     },
     {name: 'Disconnected_b',
       background: disconnected_b,
@@ -60,7 +60,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'DISCONNECTED',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '7px'}
+      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '6px'}
     },
     {name: 'Double_w',
       background: double_w,
@@ -68,7 +68,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'DOUBLE SPEED',
-      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '7px'}
+      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '6px'}
     },
     {name: 'Double_b',
       background: double_b,
@@ -76,7 +76,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'DOUBLE SPEED',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '7px'}
+      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '6px'}
     },
     {name: 'Firewall_w',
       background: firewall_w,
@@ -84,7 +84,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'FIREWALL',
-      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '7px'}
+      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '6px'}
     },
     {name: 'Firewall_b',
       background: firewall_b,
@@ -92,7 +92,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'FIREWALL',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '7px'}
+      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '6px'}
     },
     {name: 'Hacker_w',
       background: hacker_w,
@@ -100,7 +100,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'HACKER',
-      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '7px'}
+      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '6px'}
     },
     {name: 'Hacker_b',
       background: hacker_b,
@@ -108,7 +108,7 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'HACKER',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '7px'}
+      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '6px'}
     },
     {name: 'Payout_w',
       background: payout_w,
@@ -116,7 +116,7 @@ export default [
       seedDisplay: {display: 'block'},
       dummyDisplay: {display: 'none'},
       msg: 'PAYOUT',
-      msgStyle: {color: '#000034', 'fontSize': '24px', 'lineHeight': '0', 'top': '-15px'}
+      msgStyle: {color: '#000034', 'fontSize': '23px', 'lineHeight': '0', 'top': '-15px'}
     },
     {name: 'Payout_b',
       background: payout_b,
@@ -124,6 +124,6 @@ export default [
       seedDisplay: {display: 'block'},
       dummyDisplay: {display: 'none'},
       msg: 'PAYOUT',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '24px', 'lineHeight': '0', 'top': '-15px'}
+      msgStyle: {color: '#FFFFFF', 'fontSize': '23px', 'lineHeight': '0', 'top': '-15px'}
     },
 ];

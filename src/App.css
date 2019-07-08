@@ -192,10 +192,23 @@ h6, .h6 {
 
 .instruction-area {
   width: 616px !important;
-  height: 480px;
+  height: 480px !important;
   text-align: left;
   font-size: 10px;
   padding: 5px 5px;
+}
+
+.backside-area {
+  width: 631px !important;
+  height: 496px !important;
+}
+
+.backside-div {
+  width: 631px !important;
+  height: 496px !important;
+  margin: 0 !important;
+  background: no-repeat center;
+  display: inline-table;
 }
 
 .card-dummy {

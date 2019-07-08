@@ -12,6 +12,8 @@ import ReactGA from 'react-ga'
 
 import logo from './img/logo.png'
 import donation from './img/donation.png'
+import backside_w from './img/backside_w.png'
+import backside_b from './img/backside_b.png'
 
 class App extends Component {
 
@@ -19,7 +21,9 @@ class App extends Component {
     super(props);
 
     this.themes = ['Dark', 'Light']
-    this.sheets = ['1', '2', '3', '4', '5', '6', '7', 'Back', 'Instructions']
+    this.instructionTxt = 'Instructions'
+    this.backTxt = 'Back'
+    this.sheets = ['1', '2', '3', '4', '5', '6', '7', this.backTxt, this.instructionTxt]
     this.cardTextsPay = [
       'A ninja took your computer and cracked your wallet',
       'Global bear market',
@@ -118,6 +122,11 @@ class App extends Component {
       ]
     ]
 
+    this.backsides = [
+      backside_b,
+      backside_w
+    ]
+
     this.valueMin = '0.1'
     this.valueMax = '1.0'
 
@@ -139,7 +148,9 @@ class App extends Component {
       valueMax: this.valueMax,
       valueMaxLength: 10,
       donationPath: donation,
-      isInstructionVisible: false //if the instruction sheet is visible
+      isInstructionVisible: false, //if the instruction sheet is visible
+      isBacksideVisible: false, //if the backside sheet is visible
+      activeBackside: this.backsides[0], //theme controlled backside sheet
     };
 
     this.componentDidMount = this.componentDidMount.bind(this)
@@ -424,36 +435,48 @@ class App extends Component {
   }
 
   selectTheme(eventKey, event) {
-    if (this.sheets[this.state.activeSheetId] === "Instructions") {
+    this.setState({
+      activeThemeId: eventKey,
+      activeTheme: this.themes[eventKey]
+    })
+    //update backside theme
+    if (this.sheets[this.state.activeSheetId] === this.backTxt) {
       this.setState({
-        activeThemeId: eventKey,
-        activeTheme: this.themes[eventKey]
+        activeBackside: this.backsides[eventKey]
       })
     }
+    //update card theme
     else {
       this.setState({
-        activeThemeId: eventKey,
-        activeTheme: this.themes[eventKey],
         activeCardTypes: this.cardSheets[eventKey][this.state.activeSheetId]
       })
     }
-
   }
 
   selectSheet(eventKey, event) {
-    if (this.sheets[eventKey] === "Instructions") {
+    this.setState({
+      activeSheetId: eventKey,
+      activeSheet: this.sheets[eventKey],
+    })
+    //update visibility of instruction content
+    if (this.sheets[eventKey] === this.instructionTxt) {
       this.setState({
-        activeSheetId: eventKey,
-        activeSheet: this.sheets[eventKey],
+        isBacksideVisible: false,
         isInstructionVisible: true,
+      })
+    }
+    //update visibility of backside content
+    else if (this.sheets[eventKey] === this.backTxt) {
+      this.setState({
+        isInstructionVisible: false,
+        isBacksideVisible: true,
       })
     }
     else {
       this.setState({
-        activeSheetId: eventKey,
-        activeSheet: this.sheets[eventKey],
         activeCardTypes: this.cardSheets[this.state.activeThemeId][eventKey],
         isInstructionVisible: false,
+        isBacksideVisible: false,
       })
       this.updateCardContent(eventKey)
     }
@@ -552,25 +575,22 @@ class App extends Component {
 
   /* Print card */
   print(event) {
-    var imageWidth = 0
-    var imageHeight = 0
-    var imageCompensateX = 0
-    var imageCompensateY = 0
-    var node = null
+    var imageWidth = 5144
+    var imageHeight = 4056
+    var imageCompensateX = -830
+    var imageCompensateY = -15
+    var node =  null
 
     if (this.state.isInstructionVisible) {
       node = document.getElementsByClassName('instruction-area')[0];
-      imageWidth = 5144
-      imageHeight = 4056
-      imageCompensateX = -830
-      imageCompensateY = -15
+    }
+    else if (this.state.isBacksideVisible) {
+      node = document.getElementsByClassName('backside-area')[0];
+      imageCompensateX = 637
+      imageCompensateY = -6
     }
     else {
       node = document.getElementsByClassName('card-area')[0];
-      imageWidth = 5144
-      imageHeight = 4056
-      imageCompensateX = -830
-      imageCompensateY = -15
     }
 
     var width =  document.body.clientWidth;
@@ -597,25 +617,22 @@ class App extends Component {
 
   /* Download card */
   download(event) {
-    var imageWidth = 0
-    var imageHeight = 0
-    var imageCompensateX = 0
-    var imageCompensateY = 0
+    var imageWidth = 5144
+    var imageHeight = 4056
+    var imageCompensateX = -830
+    var imageCompensateY = -15
     var node =  null
 
     if (this.state.isInstructionVisible) {
       node = document.getElementsByClassName('instruction-area')[0];
-      imageWidth = 5144
-      imageHeight = 4056
-      imageCompensateX = -830
-      imageCompensateY = -15
+    }
+    else if (this.state.isBacksideVisible) {
+      node = document.getElementsByClassName('backside-area')[0];
+      imageCompensateX = 637
+      imageCompensateY = -6
     }
     else {
       node = document.getElementsByClassName('card-area')[0];
-      imageWidth = 5144
-      imageHeight = 4056
-      imageCompensateX = -830
-      imageCompensateY = -15
     }
 
     var width =  document.body.clientWidth;
@@ -700,7 +717,7 @@ class App extends Component {
         </div>
 
         <div className="noprint">
-          <div className="card-area" style={{display: this.state.isInstructionVisible ? "none":"block"}}>
+          <div className="card-area" style={{display: (this.state.isInstructionVisible || this.state.isBacksideVisible) ? "none":"block"}}>
             <div>
               <Card theme={this.state.activeCardTypes[0]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[0])} msg={this.state.activeCardTexts[0]}/>
               <Card theme={this.state.activeCardTypes[1]} seed={this.state.seed} payment={this.getQrPayment(this.state.account,this.state.activePayments[1])} msg={this.state.activeCardTexts[1]}/>
@@ -716,6 +733,12 @@ class App extends Component {
           </div>
           <div className="instruction-area" style={{display: + this.state.isInstructionVisible ? "block":"none"}}>
             <div dangerouslySetInnerHTML={{ __html: this.playInstructions }}></div>
+          </div>
+          <div className="backside-area" style={{display: + this.state.isBacksideVisible ? "block":"none"}}>
+            <div className="backside-div" style={{
+              backgroundImage: 'url(' + this.state.activeBackside + ')',
+              backgroundSize: '631px 496px'
+            }} ></div>
           </div>
         </div>
         <img className="hidden print" src={this.state.cardImageData} alt="sheet" />
