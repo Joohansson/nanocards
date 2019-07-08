@@ -358,7 +358,8 @@ class App extends Component {
 
   /* Get raw amount [string] from Mnano */
   nanoToRaw(nano) {
-    return bigInt(parseFloat(nano)).times('1000000000000000000000000000000').toString()
+    let mnano = nano*1000000
+    return bigInt(parseFloat(mnano)).times('1000000000000000000000000').toString()
   }
 
   /* Get qr content for nano payment */
