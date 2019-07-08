@@ -176,7 +176,7 @@ class App extends Component {
       <li>Input a custom min/max Nano penalty (randomized per card in each QR)</li>\
       <li>Hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>\
       <li>Download images or directly print each of the 7 sheets (plus optional back and instruction sheets)</li>\
-      <li>For best result: Print on landscape A4 thich glossy paper, small margins. Images give correct card size at 548 DPI.</li>\
+      <li>Best result: Print A4 landscape, thick glossy paper, small margins. Downloaded images give correct size at 548 DPI.</li>\
       <li>Back side: Print all sheets, flip the pages and feed back into the printer and print the back side</li>\
       <li>Cut the cards with a razor blade and ruler</li>\
     </ol>'
@@ -187,7 +187,7 @@ class App extends Component {
       <li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>\
       <li>Shuffle and give 5 cards to each player face down</li>\
       <li>Place the remaining stack on a table face down</li>\
-      <li>Each player (in sequence) will take one card from the stack and play one card from hand (placed visible on the table)</li>\
+      <li>Each player (in sequence) will play one card from hand (visible on the table) and take new card(s) from the stack</li>\
       <li>The game is over and can reset when the PAYOUT card(s) has been claimed</li>\
       <li>Winner take all Nano!</li>\
     </ol>\
@@ -205,10 +205,10 @@ class App extends Component {
     <ul>\
       <li>PAYOUT can be saved for later to accumulate more Nano, but can also be stolen!</li>\
       <li>No player may ever have more than 5 cards on hand. Also no less than 5 if there is still a stack.</li>\
-      <li>A card can only be used one time and is always consumed.</li>\
-      <li>If a card is destroyed (with a FIREWALL), consumed (HACKER) or stolen, a new card must be taken from the stack.</li>\
+      <li>A card can only be used one time and is always consumed until next round.</li>\
+      <li>If a card is destroyed (with FIREWALL), consumed (HACKER) or stolen, a new card must be taken from the stack.</li>\
       <li>If the stack is empty: Players will start consume their cards on hand until someone use the PAYOUT.</li>\
-      <li>If using several set of decks with different payout seed & penalty account: All PAYOUTS must be used before the game can end.</li>\
+      <li>If using several decks with different seed & account: All PAYOUTS must be used before reset.</li>\
     </ul>'
   }
 
