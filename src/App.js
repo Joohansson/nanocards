@@ -173,7 +173,7 @@ class App extends Component {
     <h6><strong>How to create your own Deck of Nano Cards<br /></strong></h6>\
     <ol>\
       <li>Choose a Theme</li>\
-      <li>Input a custom min/max Nano penalty (paid per card)</li>\
+      <li>Input a custom min/max Nano penalty (randomized per card in each QR)</li>\
       <li>Hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>\
       <li>Download images or directly print each of the 7 sheets (plus optional back and instruction sheets)</li>\
       <li>For best result: Print on landscape A4 thich glossy paper, small margins. Images give correct card size at 548 DPI.</li>\
@@ -185,7 +185,7 @@ class App extends Component {
     <ol>\
       <li>A wallet that can both pay and receive Nano by QR is required like <a href="https://natrium.io/">Natrium</a></li>\
       <li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>\
-      <li>Shuffle and give 5 cards to each player (hidden)</li>\
+      <li>Shuffle and give 5 cards to each player face down</li>\
       <li>Place the remaining stack on a table face down</li>\
       <li>Each player (in sequence) will take one card from the stack and play one card from hand (placed visible on the table)</li>\
       <li>The game is over and can reset when the PAYOUT card(s) has been claimed</li>\
@@ -208,7 +208,7 @@ class App extends Component {
       <li>A card can only be used one time and is always consumed.</li>\
       <li>If a card is destroyed (with a FIREWALL), consumed (HACKER) or stolen, a new card must be taken from the stack.</li>\
       <li>If the stack is empty: Players will start consume their cards on hand until someone use the PAYOUT.</li>\
-      <li>If using several set of decks: All PAYOUTS must be used before the game can end.</li>\
+      <li>If using several set of decks with different payout seed & penalty account: All PAYOUTS must be used before the game can end.</li>\
     </ul>'
   }
 
