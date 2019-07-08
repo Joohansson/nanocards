@@ -165,8 +165,9 @@ class App extends Component {
       <li>Input a custom min/max Nano penalty (paid per card)</li>\
       <li>Hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>\
       <li>Download images or directly print each of the 7 sheets (plus optional back and instruction sheets)</li>\
-      <li>For correct card size: Print on landscape A4 (thick paper) with small margins or 548 DPI</li>\
-      <li>Cut the cards (razor blade and ruler recommended)</li>\
+      <li>For best result: Print on landscape A4 thich glossy paper, small margins. Images give correct card size at 548 DPI.</li>\
+      <li>Back side: Print all sheets, flip the pages and feed back into the printer and print the back side</li>\
+      <li>Cut the cards with a razor blade and ruler</li>\
     </ol>'
 
     this.playInstructions = '<h6><strong>How to Play<br /></strong></h6>\
@@ -555,16 +556,17 @@ class App extends Component {
     var imageHeight = 0
     var imageCompensateX = 0
     var imageCompensateY = 0
+    var node = null
 
     if (this.state.isInstructionVisible) {
-      var node = document.getElementsByClassName('instruction-area')[0];
+      node = document.getElementsByClassName('instruction-area')[0];
       imageWidth = 5144
       imageHeight = 4056
       imageCompensateX = -830
       imageCompensateY = -15
     }
     else {
-      var node = document.getElementsByClassName('card-area')[0];
+      node = document.getElementsByClassName('card-area')[0];
       imageWidth = 5144
       imageHeight = 4056
       imageCompensateX = -830
@@ -599,16 +601,17 @@ class App extends Component {
     var imageHeight = 0
     var imageCompensateX = 0
     var imageCompensateY = 0
+    var node =  null
 
     if (this.state.isInstructionVisible) {
-      var node = document.getElementsByClassName('instruction-area')[0];
+      node = document.getElementsByClassName('instruction-area')[0];
       imageWidth = 5144
       imageHeight = 4056
       imageCompensateX = -830
       imageCompensateY = -15
     }
     else {
-      var node = document.getElementsByClassName('card-area')[0];
+      node = document.getElementsByClassName('card-area')[0];
       imageWidth = 5144
       imageHeight = 4056
       imageCompensateX = -830
