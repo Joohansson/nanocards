@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8a6f149357e6e4df7270964760232b5c",
+    "revision": "198b80050888caf2635a391adc842c35",
     "url": "./index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/css/2.510409cd.chunk.css"
   },
   {
-    "revision": "dc73625147e6874b93d4",
+    "revision": "39a1222a91f25e325b0d",
     "url": "./static/css/main.3f105741.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/js/2.80999e9c.chunk.js"
   },
   {
-    "revision": "dc73625147e6874b93d4",
-    "url": "./static/js/main.cb9cff03.chunk.js"
+    "revision": "39a1222a91f25e325b0d",
+    "url": "./static/js/main.7de68d7a.chunk.js"
   },
   {
     "revision": "8c97409f0ee389fe75da",
@@ -72,12 +72,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Nunito-Light.64365c70.eot"
   },
   {
-    "revision": "ea309f2877d7fdca4f70dbb4760b07df",
-    "url": "./static/media/backside_b.ea309f28.png"
+    "revision": "8e2a743820bd001e295874d6d78ed330",
+    "url": "./static/media/backside_b.8e2a7438.png"
   },
   {
-    "revision": "951f315c1e6d7a059d8e064f766c47a1",
-    "url": "./static/media/backside_w.951f315c.png"
+    "revision": "b982b0533e62976f20790c1eb9e14c9e",
+    "url": "./static/media/backside_w.b982b053.png"
   },
   {
     "revision": "9c3847d92475429614bd132548b09bdd",
