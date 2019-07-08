@@ -127,8 +127,8 @@ class App extends Component {
       backside_w
     ]
 
-    this.valueMin = '0.1'
-    this.valueMax = '1.0'
+    this.valueMin = '0.01'
+    this.valueMax = '0.1'
 
     this.randomPayments = this.randomizePayments(this.valueMin,this.valueMax)
 
