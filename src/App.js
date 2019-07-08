@@ -439,18 +439,13 @@ class App extends Component {
   selectTheme(eventKey, event) {
     this.setState({
       activeThemeId: eventKey,
-      activeTheme: this.themes[eventKey]
+      activeTheme: this.themes[eventKey],
+      activeBackside: this.backsides[eventKey]
     })
-    //update backside theme
-    if (this.sheets[this.state.activeSheetId] === this.backTxt) {
-      this.setState({
-        activeBackside: this.backsides[eventKey]
-      })
-    }
     //update card theme
-    else {
+    if (this.sheets[this.state.activeSheetId] !== this.backTxt || this.sheets[this.state.activeSheetId] !== this.instructionTxt) {
       this.setState({
-        activeCardTypes: this.cardSheets[eventKey][this.state.activeSheetId]
+          activeCardTypes: this.cardSheets[eventKey][this.state.activeSheetId]
       })
     }
   }
