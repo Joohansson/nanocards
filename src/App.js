@@ -342,6 +342,7 @@ class App extends Component {
   getRandomPayment(min,max) {
     let nano = bigInt(Math.floor((Math.random() * (parseFloat(max) - parseFloat(min)) + parseFloat(min))*1000000)) //round to 1 million to get max 6 decimals
     let raw = nano.times('1000000000000000000000000').toString()
+    console.log(raw)
     return raw
   }
 
@@ -544,7 +545,7 @@ class App extends Component {
   }
 
   /* Generate wallet account and seed, update QR */
-  generateNewWallet(min="0.1",max="1.0", seed=false) {
+  generateNewWallet(min=this.valueMin, max=this.valueMax, seed=false) {
     //Update payment content
     this.randomPayments = this.randomizePayments(min,max)
     this.updateCardContent(this.state.activeSheetId)
