@@ -167,7 +167,7 @@ class App extends Component {
 
     this.gameIntro = '<h6><strong>What are Nano Cards?<br /></strong></h6>'+
     '<ul>'+
-      '<li>A free printable card game where you pay/win a feeless cryptocurrency (Nano) to/from a unique mutual account (pot)</li>'+
+      '<li>A free printable card game where you pay/win a feeless cryptocurrency (Nano) to/from a unique mutual account</li>'+
       '<li>The winner will receive the full pot in each game</li>'+
     '</ul>'+
     '<h6><strong>How to create your own Deck of Nano Cards<br /></strong></h6>'+
@@ -178,7 +178,7 @@ class App extends Component {
       '<li>Best result: Print A4 landscape, thick glossy paper, small margins. Downloaded images give correct size at 548 DPI.</li>'+
       '<li>Download images or directly print each of the 7 sheets (plus optional back and instruction sheets)</li>'+
       '<li>Back side: Print all sheets, flip the pages and feed back into the printer and print the back side</li>'+
-      '<li>Cut the cards with a razor blade and ruler</li>'+
+      '<li>Cut the cards with a razor blade and ruler. Frame first to minimize number of cuts.</li>'+
     '</ol>'
 
     this.playInstructions = '<h6><strong>How to Play<br /></strong></h6>\
@@ -187,19 +187,20 @@ class App extends Component {
       <li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>\
       <li>Shuffle and give 5 cards to each player face down. Remaining stack on table face down</li>\
       <li>Each player (in sequence) will play one card from hand (face up on table) and take new card(s) from the stack</li>\
+      <li>All cards affecting yourself only if not otherwise stated below</li>\
       <li>The game is over and can reset when the PAYOUT card(s) has been claimed and winner take all Nano!</li>\
     </ol>\
     <h6><strong>Card Index<br /></strong></h6>\
     <ul>\
-      <li><strong>PAYOUT (Green):</strong> Scan to sweep full amount (Natrium: "Load from paper wallet"). Game over.</li>\
-      <li><strong>PENALTY (Black):</strong> Scan to pay (random) amount encoded in the QR.</li>\
-      <li><strong>DATA BREACH (Red):</strong> Scan to pay (max) amount encoded in the QR. Can be blocked by a FIREWALL.</li>\
+      <li><strong>PAYOUT (Green):</strong> Scan to sweep full amount (Natrium: "Load from paper wallet"). GAME OVER.</li>\
+      <li><strong>PENALTY (Black):</strong> Scan to pay (wallet send) the (random) amount encoded in the QR.</li>\
+      <li><strong>DATA BREACH (Red):</strong> Scan to pay (wallet send) the (max) amount encoded in the QR. Can be blocked by a FIREWALL.</li>\
       <li><strong>HACKER:</strong><br />1. Steal one random card from an opponent<br />2a. Force an opponent to pay one of your PENALTY or DATA BREACH cards (both cards consumed)<br />2b. If blocked by a FIREWALL pay your own card or use another FIREWALL </li>\
       <li><strong>FIREWALL:</strong><br />1. Block someone from stealing your card<br />2. Block someone who tries to force a PENALTY or DATA BREACH<br />3. Destroy one DATA BREACH card (both cards consumed)</li>\
       <li><strong>DOUBLE SPEED:<br /></strong> 1. Next player will play two cards (and refill to have 5 in total)<br />2a. If next player do 2x HACKER: One FIREWALL is enough to block<br />2b. If next player do 2x DOUBLE SPEED: Next up will play 4 cards, or use DISCONNECTED</li>\
       <li><strong>DISCONNECTED:</strong> Skip one turn (even if previous player used one or more DOUBLE SPEED)</li>\
     </ul>\
-    <h6><strong>Special Rules<br /></strong></h6>\
+    <h6><strong>Extra Rules<br /></strong></h6>\
     <ul>\
       <li>A card can only be used one time and is always consumed until next game.</li>\
       <li>PAYOUT can be saved for later to accumulate more Nano, but can also be stolen!</li>\
@@ -670,7 +671,7 @@ class App extends Component {
         </header>
 
         <div className="noprint">
-          <Button variant="primary" onClick={this.collapse} className="first-btn">HOW TO</Button>
+          <Button variant="primary" onClick={this.collapse} className="first-btn">INTRO & INSTRUCTIONS</Button>
           <div className="collapse-content">
             <div dangerouslySetInnerHTML={{ __html: this.gameIntro }}></div>
             <div dangerouslySetInnerHTML={{ __html: this.playInstructions }}></div>
