@@ -185,8 +185,7 @@ class App extends Component {
     <ol>\
       <li>A wallet that can both pay and receive Nano by QR is required like <a href="https://natrium.io/">Natrium</a></li>\
       <li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>\
-      <li>Shuffle and give 5 cards to each player face down</li>\
-      <li>Place the remaining stack on a table face down</li>\
+      <li>Shuffle and give 5 cards to each player face down. Remaining stack on table face down</li>\
       <li>Each player (in sequence) will play one card from hand (face up on table) and take new card(s) from the stack</li>\
       <li>The game is over and can reset when the PAYOUT card(s) has been claimed and winner take all Nano!</li>\
     </ol>\
@@ -197,8 +196,8 @@ class App extends Component {
       <li><strong>DATA BREACH (Red):</strong> Scan to pay (max) amount encoded in the QR. Can be blocked by a FIREWALL.</li>\
       <li><strong>HACKER:</strong><br />1. Steal one random card from an opponent<br />2a. Force an opponent to pay one of your PENALTY or DATA BREACH cards (both cards consumed)<br />2b. If blocked by a FIREWALL pay your own card or use another FIREWALL </li>\
       <li><strong>FIREWALL:</strong><br />1. Block someone from stealing your card<br />2. Block someone who tries to force a PENALTY or DATA BREACH<br />3. Destroy one DATA BREACH card (both cards consumed)</li>\
-      <li><strong>DISCONNECTED:</strong> Skip one turn</li>\
-      <li><strong>DOUBLE SPEED:</strong> Next player will play two cards (and refill to have 5 in total)</li>\
+      <li><strong>DOUBLE SPEED:<br /></strong> 1. Next player will play two cards (and refill to have 5 in total)<br />2a. If next player do 2x HACKER: One FIREWALL is enough to block<br />2b. If next player do 2x DOUBLE SPEED: Next up will play 4 cards, or use DISCONNECTED</li>\
+      <li><strong>DISCONNECTED:</strong> Skip one turn (even if previous player used one or more DOUBLE SPEED)</li>\
     </ul>\
     <h6><strong>Special Rules<br /></strong></h6>\
     <ul>\
