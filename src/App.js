@@ -165,21 +165,21 @@ class App extends Component {
     this.download = this.download.bind(this)
     this.print = this.print.bind(this)
 
-    this.gameIntro = '<h6><strong>What are Nano Cards?<br /></strong></h6>\
-    <ul>\
-      <li>A free printable card game where you pay/win a feeless cryptocurrency (Nano) to/from a unique mutual account (pot)</li>\
-      <li>The winner will receive the full pot in each game</li>\
-    </ul>\
-    <h6><strong>How to create your own Deck of Nano Cards<br /></strong></h6>\
-    <ol>\
-      <li>Choose a Theme</li>\
-      <li>Input a custom min/max Nano penalty (randomized per card in each QR)</li>\
-      <li>Hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>\
-      <li>Download images or directly print each of the 7 sheets (plus optional back and instruction sheets)</li>\
-      <li>Best result: Print A4 landscape, thick glossy paper, small margins. Downloaded images give correct size at 548 DPI.</li>\
-      <li>Back side: Print all sheets, flip the pages and feed back into the printer and print the back side</li>\
-      <li>Cut the cards with a razor blade and ruler</li>\
-    </ol>'
+    this.gameIntro = '<h6><strong>What are Nano Cards?<br /></strong></h6>'+
+    '<ul>'+
+      '<li>A free printable card game where you pay/win a feeless cryptocurrency (Nano) to/from a unique mutual account (pot)</li>'+
+      '<li>The winner will receive the full pot in each game</li>'+
+    '</ul>'+
+    '<h6><strong>How to create your own Deck of Nano Cards<br /></strong></h6>'+
+    '<ol>'+
+      '<li>Choose a Theme</li>'+
+      '<li>Input a custom min/max Nano penalty (randomized per card in each QR)</li>'+
+      '<li>Hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>'+
+      '<li>Best result: Print A4 landscape, thick glossy paper, small margins. Downloaded images give correct size at 548 DPI.</li>'+
+      '<li>Download images or directly print each of the 7 sheets (plus optional back and instruction sheets)</li>'+
+      '<li>Back side: Print all sheets, flip the pages and feed back into the printer and print the back side</li>'+
+      '<li>Cut the cards with a razor blade and ruler</li>'+
+    '</ol>'
 
     this.playInstructions = '<h6><strong>How to Play<br /></strong></h6>\
     <ol>\
@@ -187,26 +187,25 @@ class App extends Component {
       <li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>\
       <li>Shuffle and give 5 cards to each player face down</li>\
       <li>Place the remaining stack on a table face down</li>\
-      <li>Each player (in sequence) will play one card from hand (visible on the table) and take new card(s) from the stack</li>\
-      <li>The game is over and can reset when the PAYOUT card(s) has been claimed</li>\
-      <li>Winner take all Nano!</li>\
+      <li>Each player (in sequence) will play one card from hand (face up on table) and take new card(s) from the stack</li>\
+      <li>The game is over and can reset when the PAYOUT card(s) has been claimed and winner take all Nano!</li>\
     </ol>\
     <h6><strong>Card Index<br /></strong></h6>\
     <ul>\
       <li><strong>PAYOUT (Green):</strong> Scan to sweep full amount (Natrium: "Load from paper wallet"). Game over.</li>\
       <li><strong>PENALTY (Black):</strong> Scan to pay (random) amount encoded in the QR.</li>\
       <li><strong>DATA BREACH (Red):</strong> Scan to pay (max) amount encoded in the QR. Can be blocked by a FIREWALL.</li>\
-      <li><strong>HACKER:</strong><br />1. Steal one random card from an opponent<br />2. Force an opponent to pay one of your PENALTY or DATA BREACH cards.</li>\
-      <li><strong>FIREWALL:</strong><br />1. Block someone from stealing a card<br />2. Block someone who tries to force a PENALTY or BREACH<br />3. Destroy one DATA BREACH card</li>\
+      <li><strong>HACKER:</strong><br />1. Steal one random card from an opponent<br />2a. Force an opponent to pay one of your PENALTY or DATA BREACH cards (both cards consumed)<br />2b. If blocked by a FIREWALL pay your own card or use another FIREWALL </li>\
+      <li><strong>FIREWALL:</strong><br />1. Block someone from stealing your card<br />2. Block someone who tries to force a PENALTY or DATA BREACH<br />3. Destroy one DATA BREACH card (both cards consumed)</li>\
       <li><strong>DISCONNECTED:</strong> Skip one turn</li>\
-      <li><strong>DOUBLE SPEED:</strong> Next player will take two cards from the stack (and play two)</li>\
+      <li><strong>DOUBLE SPEED:</strong> Next player will play two cards (and refill to have 5 in total)</li>\
     </ul>\
     <h6><strong>Special Rules<br /></strong></h6>\
     <ul>\
+      <li>A card can only be used one time and is always consumed until next game.</li>\
       <li>PAYOUT can be saved for later to accumulate more Nano, but can also be stolen!</li>\
       <li>No player may ever have more than 5 cards on hand. Also no less than 5 if there is still a stack.</li>\
-      <li>A card can only be used one time and is always consumed until next round.</li>\
-      <li>If a card is destroyed (with FIREWALL), consumed (HACKER) or stolen, a new card must be taken from the stack.</li>\
+      <li>If holding for example 5 FIREWALL cards, player must still consume one even if nothing happens.</li>\
       <li>If the stack is empty: Players will start consume their cards on hand until someone use the PAYOUT.</li>\
       <li>If using several decks with different seed & account: All PAYOUTS must be used before reset.</li>\
     </ul>'
