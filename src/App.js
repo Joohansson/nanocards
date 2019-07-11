@@ -20,7 +20,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.themes = ['Dark', 'Light']
+    this.themes = ['Manual Dark', 'Manual Light', 'Pro Dark', 'Pro Light']
     this.instructionTxt = 'Instructions'
     this.backTxt = 'Back'
     this.sheets = ['1', '2', '3', '4', '5', '6', '7', this.backTxt, this.instructionTxt]
@@ -57,7 +57,7 @@ class App extends Component {
 
     this.cardSheets =
     [
-      //Dark theme
+      //Manual Dark theme
       [
         [
           this.getCardByName("Payout_b"), this.getCardByName("Pay_data_b"), this.getCardByName("Pay_data_b"), this.getCardByName("Pay_data_b"),
@@ -89,7 +89,7 @@ class App extends Component {
         ]
       ],
 
-      //Light theme
+      //Manual Light theme
       [
         [
           this.getCardByName("Payout_w"), this.getCardByName("Pay_data_w"), this.getCardByName("Pay_data_w"), this.getCardByName("Pay_data_w"),
@@ -119,10 +119,76 @@ class App extends Component {
           this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Disconnected_w"),
           this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"),
         ]
+      ],
+
+      //Pro Dark theme
+      [
+        [
+          this.getCardByName("Payout_b_pro"), this.getCardByName("Pay_data_b_pro"), this.getCardByName("Pay_data_b_pro"), this.getCardByName("Pay_data_b_pro"),
+          this.getCardByName("Pay_data_b_pro"), this.getCardByName("Pay_data_b_pro"), this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"),
+        ],
+        [
+          this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"),
+          this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"),
+        ],
+        [
+          this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"),
+          this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"),
+        ],
+        [
+          this.getCardByName("Pay_b_pro"), this.getCardByName("Pay_b_pro"), this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"),
+          this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"),
+        ],
+        [
+          this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"),
+          this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"),
+        ],
+        [
+          this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"),
+          this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"),
+        ],
+        [
+          this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Disconnected_b_pro"),
+          this.getCardByName("Disconnected_b_pro"), this.getCardByName("Disconnected_b_pro"), this.getCardByName("Disconnected_b_pro"), this.getCardByName("Disconnected_b_pro"),
+        ]
+      ],
+
+      //Pro Light theme
+      [
+        [
+          this.getCardByName("Payout_w_pro"), this.getCardByName("Pay_data_w_pro"), this.getCardByName("Pay_data_w_pro"), this.getCardByName("Pay_data_w_pro"),
+          this.getCardByName("Pay_data_w_pro"), this.getCardByName("Pay_data_w_pro"), this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"),
+        ],
+        [
+          this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"),
+          this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"),
+        ],
+        [
+          this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"),
+          this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"),
+        ],
+        [
+          this.getCardByName("Pay_w_pro"), this.getCardByName("Pay_w_pro"), this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"),
+          this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"),
+        ],
+        [
+          this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"),
+          this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"),
+        ],
+        [
+          this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"),
+          this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"),
+        ],
+        [
+          this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Disconnected_w_pro"),
+          this.getCardByName("Disconnected_w_pro"), this.getCardByName("Disconnected_w_pro"), this.getCardByName("Disconnected_w_pro"), this.getCardByName("Disconnected_w_pro"),
+        ]
       ]
     ]
 
     this.backsides = [
+      backside_b,
+      backside_w,
       backside_b,
       backside_w
     ]
@@ -181,34 +247,34 @@ class App extends Component {
       '<li>Cut the cards with a razor blade and ruler. Frame first to minimize number of cuts.</li>'+
     '</ol>'
 
-    this.playInstructions = '<h6><strong>How to Play<br /></strong></h6>\
-    <ol>\
-      <li>A wallet that can both pay and receive Nano by QR is required like <a href="https://natrium.io/">Natrium</a></li>\
-      <li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>\
-      <li>Shuffle and give 5 cards to each player face down. Remaining stack on table face down</li>\
-      <li>Each player (in sequence) will play one card from hand (face up on table) and take new card(s) from the stack</li>\
-      <li>All cards affecting yourself only if not otherwise stated below</li>\
-      <li>The game is over and can reset when the PAYOUT card(s) has been claimed and winner take all Nano!</li>\
-    </ol>\
-    <h6><strong>Card Index<br /></strong></h6>\
-    <ul>\
-      <li><strong>PAYOUT (Green):</strong> Scan to sweep full amount (Natrium: "Load from paper wallet"). GAME OVER.</li>\
-      <li><strong>PENALTY (Black):</strong> Scan to pay (wallet send) the (random) amount encoded in the QR.</li>\
-      <li><strong>DATA BREACH (Red):</strong> Scan to pay (wallet send) the (max) amount encoded in the QR. Can be blocked by a FIREWALL.</li>\
-      <li><strong>HACKER:</strong><br />1. Steal one random card from an opponent<br />2a. Force an opponent to pay one of your PENALTY or DATA BREACH cards (both cards consumed)<br />2b. If blocked by a FIREWALL pay your own card or use another FIREWALL </li>\
-      <li><strong>FIREWALL:</strong><br />1. Block someone from stealing your card<br />2. Block someone who tries to force a PENALTY or DATA BREACH<br />3. Destroy one DATA BREACH card (both cards consumed)</li>\
-      <li><strong>DOUBLE SPEED:<br /></strong> 1. Next player will play two cards (and refill to have 5 in total)<br />2a. If next player do 2x HACKER: One FIREWALL is enough to block<br />2b. If next player do 2x DOUBLE SPEED: Next up will play 4 cards, or use DISCONNECTED</li>\
-      <li><strong>DISCONNECTED:</strong> Skip one turn (even if previous player used one or more DOUBLE SPEED)</li>\
-    </ul>\
-    <h6><strong>Extra Rules<br /></strong></h6>\
-    <ul>\
-      <li>A card can only be used one time and is always consumed until next game.</li>\
-      <li>PAYOUT can be saved for later to accumulate more Nano, but can also be stolen!</li>\
-      <li>No player may ever have more than 5 cards on hand. Also no less than 5 if there is still a stack.</li>\
-      <li>If holding for example 5 FIREWALL cards, player must still consume one even if nothing happens.</li>\
-      <li>If the stack is empty: Players will start consume their cards on hand until someone use the PAYOUT.</li>\
-      <li>If using several decks with different seed & account: All PAYOUTS must be used before reset.</li>\
-    </ul>'
+    this.playInstructions = '<h6><strong>How to Play<br /></strong></h6>'+
+    '<ol>'+
+      '<li>A wallet that can both pay and receive Nano by QR is required like <a href="https://natrium.io/">Natrium</a></li>'+
+      '<li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>'+
+      '<li>Shuffle and give 5 cards to each player face down. Remaining stack on table face down</li>'+
+      '<li>Each player (in sequence) will play one card from hand (face up on table) and take new card(s) from the stack</li>'+
+      '<li>All cards affecting yourself only if not otherwise stated below</li>'+
+      '<li>The game is over and can reset when the PAYOUT card(s) has been claimed and winner take all Nano!</li>'+
+    '</ol>'+
+    '<h6><strong>Card Index<br /></strong></h6>'+
+    '<ul>'+
+      '<li><strong>PAYOUT (Green):</strong> Scan to sweep full amount (Natrium: "Load from paper wallet"). GAME OVER.</li>'+
+      '<li><strong>PENALTY (Black):</strong> Scan to pay (wallet send) the (random) amount encoded in the QR.</li>'+
+      '<li><strong>DATA BREACH (Red):</strong> Scan to pay (wallet send) the (max) amount encoded in the QR. Can be blocked by a FIREWALL.</li>'+
+      '<li><strong>HACKER:</strong><br />1. Steal one random card from an opponent<br />2a. Force an opponent to pay one of your PENALTY or DATA BREACH cards (both cards consumed)<br />2b. If blocked by a FIREWALL pay your own card or use another FIREWALL </li>'+
+      '<li><strong>FIREWALL:</strong><br />1. Block someone from stealing your card<br />2. Block someone who tries to force a PENALTY or DATA BREACH<br />3. Destroy one DATA BREACH card (both cards consumed)</li>'+
+      '<li><strong>DOUBLE SPEED:<br /></strong> 1. Next player will play two cards (and refill to have 5 in total)<br />2a. If next player do 2x HACKER: One FIREWALL is enough to block<br />2b. If next player do 2x DOUBLE SPEED: Next up will play 4 cards, or use DISCONNECTED</li>'+
+      '<li><strong>DISCONNECTED:</strong> Skip one turn (even if previous player used one or more DOUBLE SPEED)</li>'+
+    '</ul>'+
+    '<h6><strong>Extra Rules<br /></strong></h6>'+
+    '<ul>'+
+      '<li>A card can only be used one time and is always consumed until next game.</li>'+
+      '<li>PAYOUT can be saved for later to accumulate more Nano, but can also be stolen!</li>'+
+      '<li>No player may ever have more than 5 cards on hand. Also no less than 5 if there is still a stack.</li>'+
+      '<li>If holding for example 5 FIREWALL cards, player must still consume one even if nothing happens.</li>'+
+      '<li>If the stack is empty: Players will start consume their cards on hand until someone use the PAYOUT.</li>'+
+      '<li>If using several decks with different seed & account: All PAYOUTS must be used before reset.</li>'+
+    '</ul>'
   }
 
   componentDidMount() {
@@ -341,7 +407,6 @@ class App extends Component {
   getRandomPayment(min,max) {
     let nano = bigInt(Math.floor((Math.random() * (parseFloat(max) - parseFloat(min)) + parseFloat(min))*1000000)) //round to 1 million to get max 6 decimals
     let raw = nano.times('1000000000000000000000000').toString()
-    console.log(raw)
     return raw
   }
 
@@ -442,7 +507,7 @@ class App extends Component {
       activeBackside: this.backsides[eventKey]
     })
     //update card theme
-    if (this.sheets[this.state.activeSheetId] !== this.backTxt || this.sheets[this.state.activeSheetId] !== this.instructionTxt) {
+    if (this.state.activeSheet !== this.backTxt && this.state.activeSheet !== this.instructionTxt) {
       this.setState({
           activeCardTypes: this.cardSheets[eventKey][this.state.activeSheetId]
       })
