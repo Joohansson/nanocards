@@ -20,7 +20,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.themes = ['Manual Dark', 'Manual Light', 'Pro Dark', 'Pro Light']
+    this.themes = ['Dark', 'Light', 'Pro Dark', 'Pro Light']
     this.instructionTxt = 'Instructions'
     this.backTxt = 'Back'
     this.sheets = ['1', '2', '3', '4', '5', '6', '7', this.backTxt, this.instructionTxt]
