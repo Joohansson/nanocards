@@ -231,20 +231,40 @@ class App extends Component {
     this.download = this.download.bind(this)
     this.print = this.print.bind(this)
 
-    this.gameIntro = '<h6><strong>What are Nano Cards?<br /></strong></h6>'+
+    this.gameIntro = '<h6><strong>What are Nano Cards and why should I play it?<br /></strong></h6>'+
     '<ul>'+
-      '<li>A free printable card game where you pay/win a feeless cryptocurrency (Nano) to/from a unique mutual account</li>'+
+      '<li>A free printable card game where you pay/win Nano (a feeless cryptocurrency) to/from a unique mutual account</li>'+
+      '<li>By choosing clever cards you will make your friends pay</li>'+
       '<li>The winner will receive the full pot in each game</li>'+
+      '<li>It\'s a fun and educational alternative to physical money and by using a feeless and fast cryptocurrency it allows you to play with very small or very large amounts. Also with a <a href="https://nanocrawler.cc/">public ledger</a> for full payment history. No more need for pennies!</li>'+
     '</ul>'+
-    '<h6><strong>How to create your own Deck of Nano Cards<br /></strong></h6>'+
+    '<h6><strong>Prepare the cards<br /></strong></h6>'+
     '<ol>'+
-      '<li>Choose a Theme</li>'+
-      '<li>Input a custom min/max Nano penalty (randomized per card in each QR)</li>'+
-      '<li>Hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>'+
-      '<li>Best result: Print A4 landscape, thick glossy paper, small margins. Downloaded images give correct size at 548 DPI.</li>'+
+      '<li>Input a custom min/max Nano penalty (randomized per card for each QR)</li>'+
+      '<li>Optionally hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>'+
+    '</ol>'+
+    '<h6><strong>How to print the cards yourself for free<br /></strong></h6>'+
+    '<ol>'+
+      '<li>Choose a Theme (not pro)</li>'+
+      '<li>Best result: Print A4 landscape, thick glossy paper, small margins. Downloaded images gives correct size at 548 DPI.</li>'+
       '<li>Download images or directly print each of the 7 sheets (plus optional back and instruction sheets)</li>'+
       '<li>Back side: Print all sheets, flip the pages and feed back into the printer and print the back side</li>'+
       '<li>Cut the cards with a razor blade and ruler. Frame first to minimize number of cuts.</li>'+
+    '</ol>'+
+    '<h6><strong>How to order a professional card deck (no cutting needed)<br /></strong></h6>'+
+    '<ol>'+
+      '<li>Choose a "Pro" Theme. The cards are safe zone compensated.</li>'+
+      '<li>Download all 7 sheets plus the back side</li>'+
+      '<li>Download this script for converting the cards. <a href="https://github.com/Joohansson/nanocards/tree/master/scripts/cut.bat">Windows</a> or <a href="https://github.com/Joohansson/nanocards/tree/master/scripts/cut.sh">Linux/Mac</a></li>'+
+      '<li>Install <a href="https://imagemagick.org/script/download.php">Imagemagic</a> for your OS (needed for the script)</li>'+
+      '<li>Copy the script to the folder where you downloaded the images.<br />Windows: Run the bat file | Linux/Mac: Make the script executable (chmod +x cut.sh) and run it (./cut.sh)</li>'+
+      '<li>It will cut out all 56 cards including the back side card.<br /><strong>WARNING:</strong> You may not want to send the Nano seed QR to a third party as they could potentially take all nano you are playinng with. As a safe option, a card_1_01_safe.png is also created as an alternative to the PAYOUT card. It\'s suggestion you send this instead and print and glue the original QR on the real card later.</li>'+
+      '<li>Go to <a href="https://www.makeplayingcards.com/design/bridge-size-blank-card-4332.html">this card printing service</a></li>'+
+      '<li>Default options are fine but more luxury is possible. Choose 72 cards if you want to include all 56 cards.</li>'+
+      '<li>Select "Different images" as front</li>'+
+      '<li>Upload all 56 pictures at once. Then drag and drop each card in order.</li>'+
+      '<li>Skip the text option and do the same for back side but "same image" and upload the "card_back.png".</li>'+
+      '<li>You should now have created the full deck! You could make a double deck as well with the same or a different Nano seed.</li>'+
     '</ol>'
 
     this.playInstructions = '<h6><strong>How to Play<br /></strong></h6>'+
@@ -775,6 +795,8 @@ class App extends Component {
               </Row>
             </Form>
           </div>
+
+          <div className="seed"><strong>Payout Seed: {this.state.seed}</strong></div>
         </div>
 
         <div className="noprint">

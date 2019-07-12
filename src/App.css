@@ -116,13 +116,6 @@ h6, .h6 {
   }
 }
 
-.addressQr {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
 .konvajs-content {
   width: 100%;
 }
@@ -138,11 +131,9 @@ h6, .h6 {
 
 .style-group {
   margin-top: 15px !important;
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
   display: flex;
   justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
   width: 800px;
   padding-top: 0;
 }
