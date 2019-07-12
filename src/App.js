@@ -796,7 +796,7 @@ class App extends Component {
             </Form>
           </div>
 
-          <input type="text" id="seed" className="form-control form-control-sm seed-box" value={this.state.seed} title="Payout Seed - Paste custom seed allowed" onChange={this.handleSeedChange.bind(this)}/>
+          <input type="text" id="seed" className="form-control form-control-sm seed-box" value={this.state.seed} title="Payout Seed - Pasting custom seed allowed" onChange={this.handleSeedChange.bind(this)}/>
         </div>
 
         <div className="noprint">
