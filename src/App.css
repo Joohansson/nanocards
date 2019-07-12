@@ -129,6 +129,11 @@ h6, .h6 {
   margin-top: 1rem !important;
 }
 
+.seed-box {
+  text-align: center !important;
+  width: 616px !important;
+}
+
 .style-group {
   margin-top: 15px !important;
   margin-bottom: 0 !important;

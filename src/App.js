@@ -651,7 +651,7 @@ class App extends Component {
 
   /* Update seed (not used) */
   handleSeedChange(event) {
-    this.generateNewWallet(event, event.target.value);
+    this.generateNewWallet(this.valueMin, this.valueMax, event.target.value);
   }
 
   /* Print card */
@@ -796,7 +796,7 @@ class App extends Component {
             </Form>
           </div>
 
-          <div className="seed"><strong>Payout Seed: {this.state.seed}</strong></div>
+          <input type="text" id="seed" className="form-control form-control-sm seed-box" value={this.state.seed} title="Payout Seed - Paste custom seed allowed" onChange={this.handleSeedChange.bind(this)}/>
         </div>
 
         <div className="noprint">
