@@ -280,9 +280,9 @@ class App extends Component {
     '</ol>'+
     '<h6><strong>Card Index<br /></strong></h6>'+
     '<ul>'+
-      '<li><strong>PAYOUT (Green):</strong> Scan to sweep full amount (Natrium: "Load from paper wallet"). GAME OVER.</li>'+
-      '<li><strong>PENALTY (Black):</strong> Scan to pay (wallet send) the (random) amount encoded in the QR.</li>'+
-      '<li><strong>DATA BREACH (Red):</strong> Scan to pay (wallet send) the (max) amount encoded in the QR. Can be blocked by a FIREWALL.</li>'+
+      '<li><strong>PAYOUT (Dashed frame):</strong> Scan to sweep full amount (Natrium: "Load from paper wallet"). GAME OVER.</li>'+
+      '<li><strong>PENALTY (Single frame):</strong> Scan to pay (wallet send) the (random) amount encoded in the QR.</li>'+
+      '<li><strong>DATA BREACH (Double frame):</strong> Scan to pay (wallet send) the (max) amount encoded in the QR.</li>'+
       '<li><strong>HACKER:</strong><br />1. Steal one random card from an opponent<br />2a. Force an opponent to pay one of your PENALTY or DATA BREACH cards (both cards consumed)<br />2b. If blocked by a FIREWALL pay your own card or use another FIREWALL </li>'+
       '<li><strong>FIREWALL:</strong><br />1. Block someone from stealing your card<br />2. Block someone who tries to force a PENALTY or DATA BREACH<br />3. Destroy one DATA BREACH card (both cards consumed)</li>'+
       '<li><strong>DOUBLE SPEED:<br /></strong> 1. Next player will play two cards (and refill to have 5 in total)<br />2a. If next player do 2x HACKER: One FIREWALL is enough to block<br />2b. If next player do 2x DOUBLE SPEED: Next up will play 4 cards, or use DISCONNECTED</li>'+
