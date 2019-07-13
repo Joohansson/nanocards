@@ -237,8 +237,9 @@ class App extends Component {
       '<li>By choosing clever cards you will make your friends pay</li>'+
       '<li>The winner will receive the full pot in each game</li>'+
       '<li>It\'s a fun and educational alternative to physical money and by using a feeless and fast cryptocurrency it allows you to play with very small or very large amounts. Also with a <a href="https://nanocrawler.cc/">public ledger</a> for full payment history. No more need for pennies!</li>'+
-    '</ul>'+
-    '<h6><strong>Prepare the cards<br /></strong></h6>'+
+    '</ul>'
+
+    this.cardPrepare = '<h6><strong>Prepare the cards<br /></strong></h6>'+
     '<ol>'+
       '<li>Input a custom min/max Nano penalty (randomized per card for each QR)</li>'+
       '<li>Optionally hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>'+
@@ -255,8 +256,8 @@ class App extends Component {
     '<ol>'+
       '<li>Choose a "Pro" Theme. The cards are safe zone compensated.</li>'+
       '<li>Download all 7 sheets plus the back side</li>'+
-      '<li>Download this script for converting the cards. <a href="https://github.com/Joohansson/nanocards/tree/master/scripts/cut.bat">Windows</a> or <a href="https://github.com/Joohansson/nanocards/tree/master/scripts/cut.sh">Linux/Mac</a></li>'+
-      '<li>Install <a href="https://imagemagick.org/script/download.php">Imagemagic</a> for your OS (needed for the script)</li>'+
+      '<li>Download this script for converting the cards. <a href="https://github.com/Joohansson/nanocards/tree/master/scripts/cut.bat">Windows</a> or <a href="https://github.com/Joohansson/nanocards/tree/master/scripts/cut.sh">Linux/Mac</a><br />If not printing from makeplayingcards.com you may want to skip the safe zone by using the <a href="https://github.com/Joohansson/nanocards/tree/master/scripts/">other scripts</a>.</li>'+
+      '<li>Install <a href="https://imagemagick.org/script/download.php">Imagemagic</a> for your OS (needed for the script). Ubuntu: "sudo apt install imagemagick"</li>'+
       '<li>Copy the script to the folder where you downloaded the images.<br />Windows: Run the bat file | Linux/Mac: Make the script executable (chmod +x cut.sh) and run it (./cut.sh)</li>'+
       '<li>It will cut out all 56 cards including the back side card.<br /><strong>WARNING:</strong> You may not want to send the Nano seed QR to a third party as they could potentially take all nano you are playinng with. As a safe option, a card_1_01_safe.png is also created as an alternative to the PAYOUT card. It\'s suggestion you send this instead and print and glue the original QR on the real card later.</li>'+
       '<li>Go to <a href="https://www.makeplayingcards.com/design/bridge-size-blank-card-4332.html">this card printing service</a></li>'+
@@ -273,7 +274,7 @@ class App extends Component {
       '<li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>'+
       '<li>Shuffle and give 5 cards to each player face down. Remaining stack on table face down</li>'+
       '<li>Each player (in sequence) will play one card from hand (face up on table) and take new card(s) from the stack</li>'+
-      '<li>All cards affecting yourself only if not otherwise stated below</li>'+
+      '<li>You scan the card you play, unless it’s one of the cards mentioned below</li>'+
       '<li>The game is over and can reset when the PAYOUT card(s) has been claimed and winner take all Nano!</li>'+
     '</ol>'+
     '<h6><strong>Card Index<br /></strong></h6>'+
@@ -759,6 +760,9 @@ class App extends Component {
           <Button variant="primary" onClick={this.collapse} className="first-btn">INTRO & INSTRUCTIONS</Button>
           <div className="collapse-content">
             <div dangerouslySetInnerHTML={{ __html: this.gameIntro }}></div>
+            <div className="sectionBreak"></div>
+            <div dangerouslySetInnerHTML={{ __html: this.cardPrepare }}></div>
+            <div className="sectionBreak"></div>
             <div dangerouslySetInnerHTML={{ __html: this.playInstructions }}></div>
             <br />
             <strong>No keys are ever stored anywhere but if you want optimal safety you can <a href="https://github.com/Joohansson/nanocards/raw/master/nanocards.zip">download this zip</a> and run the site locally (no web server needed). Or just plug the cable before you hit Generate.</strong>
