@@ -243,6 +243,7 @@ class App extends Component {
     '<ol>'+
       '<li>Input a custom min/max Nano penalty (randomized per card for each QR)</li>'+
       '<li>Optionally hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>'+
+      '<li>If you want to print another copy of your deck, you can also paste in a Nano seed</li>'+
     '</ol>'+
     '<h6><strong>How to print the cards yourself for free<br /></strong></h6>'+
     '<ol>'+
