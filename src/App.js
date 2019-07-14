@@ -244,6 +244,7 @@ class App extends Component {
       '<li>Input a custom min/max Nano penalty (randomized per card for each QR)</li>'+
       '<li>Optionally hit "Generate Cards" to randomize a Nano seed, payment account and penalty amounts</li>'+
       '<li>If you want to print another copy of your deck, you can also paste in a Nano seed</li>'+
+      '<li><strong>No keys are ever stored anywhere but if you want optimal safety you can <a href="https://github.com/Joohansson/nanocards/raw/master/nanocards.zip">download this zip</a> and run the site locally (no web server needed). Or just plug the cable before you hit Generate.</strong></li>'+
     '</ol>'+
     '<h6><strong>How to print the cards yourself for free<br /></strong></h6>'+
     '<ol>'+
@@ -275,22 +276,22 @@ class App extends Component {
       '<li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>'+
       '<li>Shuffle and give 5 cards to each player face down. Remaining stack on table face down</li>'+
       '<li>Each player (in sequence) will play one card from hand (face up on table) and take new card(s) from the stack</li>'+
-      '<li>You scan the card you play, unless it’s one of the cards mentioned below</li>'+
+      '<li>The next player will pay the QR shown on the card, unless it\'s one of the other cards mentioned below</li>'+
       '<li>The game is over and can reset when the PAYOUT card(s) has been claimed and winner take all Nano!</li>'+
     '</ol>'+
     '<h6><strong>Card Index<br /></strong></h6>'+
     '<ul>'+
-      '<li><strong>PAYOUT (Dashed frame):</strong> Scan to sweep full amount (Natrium: "Load from paper wallet"). GAME OVER.</li>'+
-      '<li><strong>PENALTY (Single frame):</strong> Scan to pay (wallet send) the (random) amount encoded in the QR.</li>'+
-      '<li><strong>DATA BREACH (Double frame):</strong> Scan to pay (wallet send) the (max) amount encoded in the QR.</li>'+
-      '<li><strong>HACKER:</strong><br />1. Steal one random card from an opponent<br />2a. Force an opponent to pay one of your PENALTY or DATA BREACH cards (both cards consumed)<br />2b. If blocked by a FIREWALL pay your own card or use another FIREWALL </li>'+
-      '<li><strong>FIREWALL:</strong><br />1. Block someone from stealing your card<br />2. Block someone who tries to force a PENALTY or DATA BREACH<br />3. Destroy one DATA BREACH card (both cards consumed)</li>'+
-      '<li><strong>DOUBLE SPEED:<br /></strong> 1. Next player will play two cards (and refill to have 5 in total)<br />2a. If next player do 2x HACKER: One FIREWALL is enough to block<br />2b. If next player do 2x DOUBLE SPEED: Next up will play 4 cards, or use DISCONNECTED</li>'+
-      '<li><strong>DISCONNECTED:</strong> Skip one turn (even if previous player used one or more DOUBLE SPEED)</li>'+
+      '<li><strong>PAYOUT (Dashed frame):</strong> The owner scan to sweep full amount (Natrium: "Load from paper wallet"). GAME OVER.</li>'+
+      '<li><strong>PENALTY (Single frame):</strong> The next player scan to pay (wallet send) the (random) amount encoded in the QR.</li>'+
+      '<li><strong>DATA BREACH (Double frame):</strong> The next player scan to pay (wallet send) the (max) amount encoded in the QR.</li>'+
+      '<li><strong>HACKER:</strong><br />1. Choose a card to steal from an opponent (who will then take a new card from the stack)<br />2a. Force an opponent to pay one of your PENALTY or DATA BREACH cards (both cards consumed)<br />2b. If the hacker attempt is blocked by a FIREWALL, pay your own card or use another FIREWALL to bounce it back</li>'+
+      '<li><strong>FIREWALL:</strong><br />1. Blocks ONE HACKER attempt (if a pay attempt: the hacker will pay for his own card, or uses another FIREWALL)<br />2. Blocks ONE DATA BREACH card that the previous player put on you (both cards destroyed)</li>'+
+      '<li><strong>DOUBLE SPEED:<br /></strong> 1. The owner will play two cards of same or different type<br />2. If you do 2x HACKER or DATA BREACH: One FIREWALL for each attempt is needed<br />3. You can only use ONE DOUBLE SPEED per turn<br />4. Cannot be combined with DISCONNECTED</li>'+
+      '<li><strong>DISCONNECTED:</strong> Skips one turn, even if the previous player used double HACKER, PENALTY or DATA BREACH on you</li>'+
     '</ul>'+
     '<h6><strong>Extra Rules<br /></strong></h6>'+
     '<ul>'+
-      '<li>A card can only be used one time and is always consumed until next game.</li>'+
+      '<li>A card can only be used one time and is always consumed when used.</li>'+
       '<li>PAYOUT can be saved for later to accumulate more Nano, but can also be stolen!</li>'+
       '<li>No player may ever have more than 5 cards on hand. Also no less than 5 if there is still a stack.</li>'+
       '<li>If holding for example 5 FIREWALL cards, player must still consume one even if nothing happens.</li>'+
@@ -765,8 +766,6 @@ class App extends Component {
             <div dangerouslySetInnerHTML={{ __html: this.cardPrepare }}></div>
             <div className="sectionBreak"></div>
             <div dangerouslySetInnerHTML={{ __html: this.playInstructions }}></div>
-            <br />
-            <strong>No keys are ever stored anywhere but if you want optimal safety you can <a href="https://github.com/Joohansson/nanocards/raw/master/nanocards.zip">download this zip</a> and run the site locally (no web server needed). Or just plug the cable before you hit Generate.</strong>
             <br/ >
           </div>
 
