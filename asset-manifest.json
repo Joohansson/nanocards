@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "./static/css/main.965e30aa.chunk.css",
-    "main.js": "./static/js/main.7a5525f2.chunk.js",
-    "main.js.map": "./static/js/main.7a5525f2.chunk.js.map",
+    "main.css": "./static/css/main.5db83df5.chunk.css",
+    "main.js": "./static/js/main.d1838c71.chunk.js",
+    "main.js.map": "./static/js/main.d1838c71.chunk.js.map",
     "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
     "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
     "static/css/2.510409cd.chunk.css": "./static/css/2.510409cd.chunk.css",
-    "static/js/2.cef3d627.chunk.js": "./static/js/2.cef3d627.chunk.js",
-    "static/js/2.cef3d627.chunk.js.map": "./static/js/2.cef3d627.chunk.js.map",
+    "static/js/2.3b137669.chunk.js": "./static/js/2.3b137669.chunk.js",
+    "static/js/2.3b137669.chunk.js.map": "./static/js/2.3b137669.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.dae6bae29e7432f1701d9aa3cf54f64f.js": "./precache-manifest.dae6bae29e7432f1701d9aa3cf54f64f.js",
+    "precache-manifest.33de96e5a57b523c43f2990f61d97183.js": "./precache-manifest.33de96e5a57b523c43f2990f61d97183.js",
     "service-worker.js": "./service-worker.js",
     "static/css/2.510409cd.chunk.css.map": "./static/css/2.510409cd.chunk.css.map",
-    "static/css/main.965e30aa.chunk.css.map": "./static/css/main.965e30aa.chunk.css.map",
+    "static/css/main.5db83df5.chunk.css.map": "./static/css/main.5db83df5.chunk.css.map",
     "static/media/style.css": "./static/media/NotoSans-Regular.fbe46f26.woff",
     "static/media/App.css": "./static/media/modal-bg.0ae84ba6.png",
     "static/media/backside_b.png": "./static/media/backside_b.620a8225.png",
@@ -46,6 +46,10 @@
     "static/media/payout_b.png": "./static/media/payout_b.44c0d04c.png",
     "static/media/payout_b_pro.png": "./static/media/payout_b_pro.75348fc8.png",
     "static/media/payout_w.png": "./static/media/payout_w.b5da0cc3.png",
-    "static/media/payout_w_pro.png": "./static/media/payout_w_pro.49d17a34.png"
+    "static/media/payout_w_pro.png": "./static/media/payout_w_pro.49d17a34.png",
+    "static/media/practise_b.png": "./static/media/practise_b.cb488e5e.png",
+    "static/media/practise_b_pro.png": "./static/media/practise_b_pro.5bdf7888.png",
+    "static/media/practise_w.png": "./static/media/practise_w.f44afba6.png",
+    "static/media/practise_w_pro.png": "./static/media/practise_w_pro.7075e43c.png"
   }
 }
