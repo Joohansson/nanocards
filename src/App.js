@@ -79,16 +79,16 @@ class App extends Component {
           this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"),
         ],
         [
-          this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"),
+          this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"), this.getCardByName("Hacker_b"), this.getCardByName("Firewall_b"),
           this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"),
         ],
         [
-          this.getCardByName("Firewall_b"), this.getCardByName("Practise_b"), this.getCardByName("Practise_b"), this.getCardByName("Practise_b"),
-          this.getCardByName("Practise_b"), this.getCardByName("Practise_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"),
+          this.getCardByName("Practise_b"), this.getCardByName("Practise_b"), this.getCardByName("Practise_b"), this.getCardByName("Practise_b"),
+          this.getCardByName("Practise_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"),
         ],
         [
-          this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Disconnected_b"),
-          this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"),
+          this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"),
+          this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"), this.getCardByName("Dummy"),
         ]
       ],
 
@@ -111,16 +111,16 @@ class App extends Component {
           this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"),
         ],
         [
-          this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"),
+          this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Hacker_w"), this.getCardByName("Firewall_w"),
           this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"),
         ],
         [
-          this.getCardByName("Firewall_w"), this.getCardByName("Practise_w"), this.getCardByName("Practise_w"), this.getCardByName("Practise_w"),
-          this.getCardByName("Practise_w"), this.getCardByName("Practise_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"),
+          this.getCardByName("Practise_w"), this.getCardByName("Practise_w"), this.getCardByName("Practise_w"), this.getCardByName("Practise_w"),
+          this.getCardByName("Practise_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"),
         ],
         [
-          this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Disconnected_w"),
-          this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"),
+          this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"),
+          this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Dummy"),
         ]
       ],
 
@@ -143,16 +143,16 @@ class App extends Component {
           this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"),
         ],
         [
-          this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"),
+          this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"), this.getCardByName("Hacker_b_pro"), this.getCardByName("Firewall_b_pro"),
           this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"),
         ],
         [
-          this.getCardByName("Firewall_b_pro"), this.getCardByName("Practise_b_pro"), this.getCardByName("Practise_b_pro"), this.getCardByName("Practise_b_pro"),
-          this.getCardByName("Practise_b_pro"), this.getCardByName("Practise_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"),
+          this.getCardByName("Practise_b_pro"), this.getCardByName("Practise_b_pro"), this.getCardByName("Practise_b_pro"), this.getCardByName("Practise_b_pro"),
+          this.getCardByName("Practise_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"),
         ],
         [
-          this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Disconnected_b_pro"),
-          this.getCardByName("Disconnected_b_pro"), this.getCardByName("Disconnected_b_pro"), this.getCardByName("Disconnected_b_pro"), this.getCardByName("Disconnected_b_pro"),
+          this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Disconnected_b_pro"), this.getCardByName("Disconnected_b_pro"),
+          this.getCardByName("Disconnected_b_pro"), this.getCardByName("Disconnected_b_pro"), this.getCardByName("Disconnected_b_pro"), this.getCardByName("Dummy"),
         ]
       ],
 
@@ -175,16 +175,16 @@ class App extends Component {
           this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"),
         ],
         [
-          this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"),
+          this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"), this.getCardByName("Hacker_w_pro"), this.getCardByName("Firewall_w_pro"),
           this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"),
         ],
         [
-          this.getCardByName("Firewall_w_pro"), this.getCardByName("Practise_w_pro"), this.getCardByName("Practise_w_pro"), this.getCardByName("Practise_w_pro"),
-          this.getCardByName("Practise_w_pro"), this.getCardByName("Practise_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"),
+          this.getCardByName("Practise_w_pro"), this.getCardByName("Practise_w_pro"), this.getCardByName("Practise_w_pro"), this.getCardByName("Practise_w_pro"),
+          this.getCardByName("Practise_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"),
         ],
         [
-          this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Disconnected_w_pro"),
-          this.getCardByName("Disconnected_w_pro"), this.getCardByName("Disconnected_w_pro"), this.getCardByName("Disconnected_w_pro"), this.getCardByName("Disconnected_w_pro"),
+          this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Disconnected_w_pro"), this.getCardByName("Disconnected_w_pro"),
+          this.getCardByName("Disconnected_w_pro"), this.getCardByName("Disconnected_w_pro"), this.getCardByName("Disconnected_w_pro"), this.getCardByName("Dummy"),
         ]
       ]
     ]

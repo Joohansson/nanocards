@@ -1,3 +1,5 @@
+import dummy from './bg/dummy.png'
+
 //Manual themes
 import pay_w from './bg/pay_w.png'
 import pay_b from './bg/pay_b.png'
@@ -292,5 +294,15 @@ export default [
       dummyDisplay: {display: 'none'},
       msg: 'PAYOUT',
       msgStyle: {color: '#FFFFFF', 'fontSize': '21px', 'lineHeight': '0', 'top': '-10px'}
+    },
+
+    //Dummy
+    {name: 'Dummy',
+      background: dummy,
+      pubDisplay: {display: 'none'},
+      seedDisplay: {display: 'none'},
+      dummyDisplay: {display: 'none'},
+      msg: '',
+      msgStyle: {color: '#FFFFFF', 'fontSize': '13px', 'lineHeight': '6px', 'top': '-12px'}
     },
 ];
