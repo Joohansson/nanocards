@@ -254,23 +254,24 @@ class App extends Component {
       '<li>Choose a Theme (not pro)</li>'+
       '<li>Best result: Print A4 landscape, thick glossy paper, small margins. Downloaded images gives correct size at 548 DPI.</li>'+
       '<li>Download images or directly print each of the 7 sheets (plus optional back and instruction sheets)</li>'+
-      '<li>Back side: Print all sheets, flip the pages and feed back into the printer and print the back side</li>'+
+      '<li>Backside: Print all sheets, flip the pages and feed back into the printer and print the backside</li>'+
       '<li>Cut the cards with a razor blade and ruler. Frame first to minimize number of cuts.</li>'+
     '</ol>'+
-    '<h6><strong>How to order a professional card deck (no cutting needed)<br /></strong></h6>'+
+    '<h6><strong>How to order a professional card deck (<a href="https://medium.com/@d84/how-to-order-a-custom-deck-of-nano-cards-167b1bf0b6cd">guide with pictures</a>)<br /></strong></h6>'+
     '<ol>'+
       '<li>Choose a "Pro" Theme. The cards are safe zone compensated.</li>'+
-      '<li>Download all 7 sheets plus the back side</li>'+
+      '<li>Download all 7 sheets plus the backside</li>'+
       '<li>Download this script for converting the cards. <a href="https://github.com/Joohansson/nanocards/tree/master/scripts/cut.bat">Windows</a> or <a href="https://github.com/Joohansson/nanocards/tree/master/scripts/cut.sh">Linux/Mac</a><br />If not printing from makeplayingcards.com you may want to skip the safe zone by using the <a href="https://github.com/Joohansson/nanocards/tree/master/scripts/">other scripts</a>.</li>'+
       '<li>Install <a href="https://imagemagick.org/script/download.php">Imagemagic</a> for your OS (needed for the script). Ubuntu: "sudo apt install imagemagick"</li>'+
       '<li>Copy the script to the folder where you downloaded the images.<br />Windows: Run the bat file | Linux/Mac: Make the script executable (chmod +x cut.sh) and run it (./cut.sh)</li>'+
-      '<li>It will cut out all 56 cards including the back side card.<br /><strong>WARNING:</strong> You may not want to send the Nano seed QR to a third party as they could potentially take all nano you are playing with. As a safe option, a card_1_01_safe.png is also created as an alternative to the PAYOUT card. It\'s suggestion you send this instead and print and glue the original QR on the real card later.</li>'+
+      '<li>It will cut out all 55 cards including the backside card.<br /><strong>WARNING:</strong> You may not want to send the Nano seed QR to a third party as they could potentially take all nano you are playing with. As a safe option, a card_1_01_safe.png is also created as an alternative to the PAYOUT card. It\'s suggestion you send this instead and print and glue the original QR on the real card later.</li>'+
       '<li>Go to <a href="https://www.makeplayingcards.com/design/bridge-size-blank-card-4332.html">this card printing service</a></li>'+
-      '<li>Default options are fine but more luxury is possible. Choose 72 cards if you want to include all 56 cards.</li>'+
+      '<li>Default options are fine but more luxury is possible for example better finish or a <a href="">custom tuck box</a>.</li>'+
       '<li>Select "Different images" as front</li>'+
-      '<li>Upload all 56 pictures at once. Then drag and drop each card in order.</li>'+
-      '<li>Skip the text option and do the same for back side but "same image" and upload the "card_back.png".</li>'+
-      '<li>You should now have created the full deck! You could make a double deck as well with the same or a different Nano seed.</li>'+
+      '<li>Upload all 55 pictures at once. Then press "help me autofill images".</li>'+
+      '<li>Skip the text option and do the same for backside but "same image" and upload the "card_back.png".</li>'+
+      '<li>If you selected a custom tuck box: Choose "advanced mode" and upload <a href="https://github.com/Joohansson/nanocards/blob/master/public/Bridge25mm.pdf">this nano cards tuck box template</a>.</li>'+
+      '<li>Finalize the order and pay.</li>'+
     '</ol>'
 
     this.playInstructions = '<h6><strong>How to Play<br /></strong></h6>'+
