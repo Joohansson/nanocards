@@ -195,6 +195,11 @@ h6, .h6 {
   padding: 5px 5px;
 }
 
+.instruction-area h6 {
+  font-size: 0.7rem !important;
+  margin-bottom: 4px !important;
+}
+
 .backside-area {
   width: 631px !important;
   height: 496px !important;

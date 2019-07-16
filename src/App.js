@@ -25,34 +25,37 @@ class App extends Component {
     this.backTxt = 'Back'
     this.sheets = ['1', '2', '3', '4', '5', '6', '7', this.backTxt, this.instructionTxt]
     this.cardTextsPay = [
-      'A ninja took your computer and cracked your wallet',
-      'Global bear market',
-      'Mobile crashed and the seed was not saved',
-      'Price fell to 2k',
+      'A ninja cracked your wallet',
+      'A bear market making you do strange things',
+      'Mobile crashed and the seed was not backed up',
+      'You made a purchase from an online dude who ran away',
       'Buy high and sell low is the way to go',
-      'A dog ate your hardware wallet and pass phrase',
-      'You got social engineered by an online friend',
-      'You have too much wealth and want to donate some',
-      'You forgot to lock your wallet after visiting an Internet café',
-      'You have suffered a stolen!',
-      'You want to fund a cool project right now',
-      'You got raigunned in NanoQuake',
+      'A dog ate your hardware wallet and passphrase',
+      'You got social engineered by "a friend"',
+      'You sent Nano to wrong address',
+      'You forgot to lock your wallet after using a public PC',
+      'A neighbour with binoculars stole your private key',
+      'You were scammed by an evil person',
+      'Someone hit you in NanoQuake',
       'You wrote down the wrong seed',
       'You showed your paper wallet at a party and don\'t remember the rest',
-      'Seed, what is that? Can I get a refund please?',
-      'You got a call from Nano Help Desk and gave them your seed',
+      'You did not save the Nano seed before resetting the wallet',
+      'You got a call from "Nano Help Desk" and gave them your seed',
       'A friend borrowed your phone and didn\'t give it back',
-      'You sent Nano to rep node by mistake',
-      'You bought a Lambo and crashed it',
-      'You want to give Nano to a stranger',
+      'You sent Nano to the wrong address',
+      'You bought a cheap hardware wallet and used the passphrase that came with it',
+      'A scammy service forced you to pay high fees',
     ]
 
     this.cardTextsPayData = [
-      'Virus targeting private keys!',
-      'Malicious code infecting password managers!',
-      '2FA deactivated and email compromised!',
-      'NSA hack initialized!',
-      'Downloaded file resulting in a black screen!',
+      'Virus targeting your private keys!',
+      'Malicious code infecting your password manager!',
+      'Email compromised with 2FA deactivated!',
+      'Weak password in a public-facing computer!',
+      'A downloaded file containing ransomware!',
+      'WiFi router hacked by a neighbour!',
+      'A cheap webcam streaming your keystrokes!',
+      'A keylogger was placed on your USB cable!',
     ]
 
     this.cardSheets =
@@ -80,8 +83,8 @@ class App extends Component {
           this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"),
         ],
         [
-          this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"),
-          this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"),
+          this.getCardByName("Firewall_b"), this.getCardByName("Practise_b"), this.getCardByName("Practise_b"), this.getCardByName("Practise_b"),
+          this.getCardByName("Practise_b"), this.getCardByName("Practise_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"),
         ],
         [
           this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Disconnected_b"),
@@ -112,8 +115,8 @@ class App extends Component {
           this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"),
         ],
         [
-          this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"),
-          this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"),
+          this.getCardByName("Firewall_w"), this.getCardByName("Practise_w"), this.getCardByName("Practise_w"), this.getCardByName("Practise_w"),
+          this.getCardByName("Practise_w"), this.getCardByName("Practise_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"),
         ],
         [
           this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Disconnected_w"),
@@ -144,8 +147,8 @@ class App extends Component {
           this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"),
         ],
         [
-          this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"),
-          this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"),
+          this.getCardByName("Firewall_b_pro"), this.getCardByName("Practise_b_pro"), this.getCardByName("Practise_b_pro"), this.getCardByName("Practise_b_pro"),
+          this.getCardByName("Practise_b_pro"), this.getCardByName("Practise_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"),
         ],
         [
           this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Disconnected_b_pro"),
@@ -176,8 +179,8 @@ class App extends Component {
           this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"),
         ],
         [
-          this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"),
-          this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"),
+          this.getCardByName("Firewall_w_pro"), this.getCardByName("Practise_w_pro"), this.getCardByName("Practise_w_pro"), this.getCardByName("Practise_w_pro"),
+          this.getCardByName("Practise_w_pro"), this.getCardByName("Practise_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"),
         ],
         [
           this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Disconnected_w_pro"),
@@ -282,19 +285,20 @@ class App extends Component {
     '<h6><strong>Card Index<br /></strong></h6>'+
     '<ul>'+
       '<li><strong>PAYOUT (Dashed frame):</strong> The owner scan to sweep full amount (Natrium: "Load from paper wallet"). GAME OVER.</li>'+
-      '<li><strong>PENALTY (Single frame):</strong> The next player scan to pay (wallet send) the (random) amount encoded in the QR.</li>'+
-      '<li><strong>DATA BREACH (Double frame):</strong> The next player scan to pay (wallet send) the (max) amount encoded in the QR.</li>'+
-      '<li><strong>HACKER:</strong><br />1. Choose a card to steal from an opponent (who will then take a new card from the stack)<br />2a. Force an opponent to pay one of your PENALTY or DATA BREACH cards (both cards consumed)<br />2b. If the hacker attempt is blocked by a FIREWALL, pay your own card or use another FIREWALL to bounce it back</li>'+
-      '<li><strong>FIREWALL:</strong><br />1. Blocks ONE HACKER attempt (if a pay attempt: the hacker will pay for his own card, or uses another FIREWALL)<br />2. Blocks ONE DATA BREACH card that the previous player put on you (both cards destroyed)</li>'+
-      '<li><strong>DOUBLE SPEED:<br /></strong> 1. The owner will play two cards of same or different type<br />2. If you do 2x HACKER or DATA BREACH: One FIREWALL for each attempt is needed<br />3. You can only use ONE DOUBLE SPEED per turn<br />4. Cannot be combined with DISCONNECTED</li>'+
-      '<li><strong>DISCONNECTED:</strong> Skips one turn, even if the previous player used double HACKER, PENALTY or DATA BREACH on you</li>'+
+      '<li><strong>EVENT (Single frame):</strong> The next player send the amount encoded in the QR. Can be blocked with a BEST PRACTISE.</li>'+
+      '<li><strong>DATA BREACH (Double frame):</strong> The next player send the amount encoded in the QR. Can be blocked with a FIREWALL.</li>'+
+      '<li><strong>HACKER:</strong><br />1. Choose a card to steal from an opponent (who will then take a new card from the stack)<br />2a. Chose an opponent to pay one of your EVENT or DATA BREACH cards (both cards consumed)<br />2b. If the hacker attempt is blocked by a FIREWALL, pay your own card or use another FIREWALL to bounce it back</li>'+
+      '<li><strong>FIREWALL:</strong><br />1. Blocks ONE HACKER attempt. If a forced pay: The hacker will now pay that card, if not using another FIREWALL<br />2. Blocks ONE DATA BREACH card that the previous player put on you (both cards destroyed)</li>'+
+      '<li><strong>BEST PRACTISE:</strong> Blocks ONE EVENT card that the previous player put on you (both cards destroyed)'+
+      '<li><strong>DOUBLE SPEED:<br /></strong> 1. The owner will play two cards of same or different type<br />2. 2x HACKER or DATA BREACH: One FIREWALL is enough. | 2x EVENT: One BEST PRACTISE is enough. <br />3. You can only use ONE DOUBLE SPEED per turn<br />4. Cannot be combined with DISCONNECTED</li>'+
+      '<li><strong>DISCONNECTED:</strong> Skips one turn, even if the previous player used double HACKER, EVENT or DATA BREACH on you</li>'+
     '</ul>'+
     '<h6><strong>Extra Rules<br /></strong></h6>'+
     '<ul>'+
       '<li>A card can only be used one time and is always consumed when used.</li>'+
       '<li>PAYOUT can be saved for later to accumulate more Nano, but can also be stolen!</li>'+
       '<li>No player may ever have more than 5 cards on hand. Also no less than 5 if there is still a stack.</li>'+
-      '<li>If holding for example 5 FIREWALL cards, player must still consume one even if nothing happens.</li>'+
+      '<li>Playing a card that does not have an affect is allowed. Player MUST use at least one card in each turn.</li>'+
       '<li>If the stack is empty: Players will start consume their cards on hand until someone use the PAYOUT.</li>'+
       '<li>If using several decks with different seed & account: All PAYOUTS must be used before reset.</li>'+
     '</ul>'

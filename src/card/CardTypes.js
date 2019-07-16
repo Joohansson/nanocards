@@ -9,6 +9,8 @@ import firewall_w from './bg/firewall_w.png'
 import firewall_b from './bg/firewall_b.png'
 import hacker_w from './bg/hacker_w.png'
 import hacker_b from './bg/hacker_b.png'
+import practise_w from './bg/practise_w.png'
+import practise_b from './bg/practise_b.png'
 import pay_data_w from './bg/pay_data_w.png'
 import pay_data_b from './bg/pay_data_b.png'
 import payout_w from './bg/payout_w.png'
@@ -25,6 +27,8 @@ import firewall_w_pro from './bg/firewall_w_pro.png'
 import firewall_b_pro from './bg/firewall_b_pro.png'
 import hacker_w_pro from './bg/hacker_w_pro.png'
 import hacker_b_pro from './bg/hacker_b_pro.png'
+import practise_w_pro from './bg/practise_w_pro.png'
+import practise_b_pro from './bg/practise_b_pro.png'
 import pay_data_w_pro from './bg/pay_data_w_pro.png'
 import pay_data_b_pro from './bg/pay_data_b_pro.png'
 import payout_w_pro from './bg/payout_w_pro.png'
@@ -126,6 +130,22 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'HACKER',
+      msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '6px', 'top': '-18px'}
+    },
+    {name: 'Practise_w',
+      background: practise_w,
+      pubDisplay: {display: 'none'},
+      seedDisplay: {display: 'none'},
+      dummyDisplay: {display: 'block'},
+      msg: 'BEST PRACTISE',
+      msgStyle: {color: '#000034', 'fontSize': '15px', 'lineHeight': '6px', 'top': '-18px'}
+    },
+    {name: 'Practise_b',
+      background: practise_b,
+      pubDisplay: {display: 'none'},
+      seedDisplay: {display: 'none'},
+      dummyDisplay: {display: 'block'},
+      msg: 'BEST PRACTISE',
       msgStyle: {color: '#FFFFFF', 'fontSize': '15px', 'lineHeight': '6px', 'top': '-18px'}
     },
     {name: 'Payout_w',
@@ -239,6 +259,22 @@ export default [
       seedDisplay: {display: 'none'},
       dummyDisplay: {display: 'block'},
       msg: 'HACKER',
+      msgStyle: {color: '#FFFFFF', 'fontSize': '13px', 'lineHeight': '6px', 'top': '-12px'}
+    },
+    {name: 'Practise_w_pro',
+      background: practise_w_pro,
+      pubDisplay: {display: 'none'},
+      seedDisplay: {display: 'none'},
+      dummyDisplay: {display: 'block'},
+      msg: 'BEST PRACTISE',
+      msgStyle: {color: '#000034', 'fontSize': '13px', 'lineHeight': '6px', 'top': '-12px'}
+    },
+    {name: 'Practise_b_pro',
+      background: practise_b_pro,
+      pubDisplay: {display: 'none'},
+      seedDisplay: {display: 'none'},
+      dummyDisplay: {display: 'block'},
+      msg: 'BEST PRACTISE',
       msgStyle: {color: '#FFFFFF', 'fontSize': '13px', 'lineHeight': '6px', 'top': '-12px'}
     },
     {name: 'Payout_w_pro',
