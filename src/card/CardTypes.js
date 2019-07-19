@@ -285,7 +285,7 @@ export default [
       seedDisplay: {display: 'block'},
       dummyDisplay: {display: 'none'},
       msg: 'PAYOUT',
-      msgStyle: {color: '#000034', 'fontSize': '21px', 'lineHeight': '0', 'top': '-10px'}
+      msgStyle: {color: '#000034', 'fontSize': '21px', 'lineHeight': '0', 'top': '-4px'}
     },
     {name: 'Payout_b_pro',
       background: payout_b_pro,
@@ -293,7 +293,7 @@ export default [
       seedDisplay: {display: 'block'},
       dummyDisplay: {display: 'none'},
       msg: 'PAYOUT',
-      msgStyle: {color: '#FFFFFF', 'fontSize': '21px', 'lineHeight': '0', 'top': '-10px'}
+      msgStyle: {color: '#FFFFFF', 'fontSize': '21px', 'lineHeight': '0', 'top': '-4px'}
     },
 
     //Dummy
