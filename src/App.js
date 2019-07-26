@@ -53,8 +53,8 @@ class App extends Component {
       'Email compromised with 2FA deactivated!',
       'Weak password in a public-facing computer!',
       'A downloaded file containing ransomware!',
-      'WiFi router hacked by a neighbour!',
-      'A cheap webcam streaming your keystrokes!',
+      'Your WiFi router hacked by a neighbour!',
+      'A webcam is streaming your keystrokes!',
       'A keylogger was placed on your USB cable!',
     ]
 
