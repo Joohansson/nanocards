@@ -266,7 +266,7 @@ class App extends Component {
       '<li>Copy the script to the folder where you downloaded the images.<br />Windows: Run the bat file | Linux/Mac: Make the script executable (chmod +x cut.sh) and run it (./cut.sh)</li>'+
       '<li>It will cut out all 55 cards including the backside card.<br /><strong>WARNING:</strong> You may not want to send the Nano seed QR to a third party as they could potentially take all nano you are playing with. As a safe option, a card_1_01_safe.png is also created as an alternative to the PAYOUT card. It\'s suggestion you send this instead and print and glue the original QR on the real card later.</li>'+
       '<li>Go to <a href="https://www.makeplayingcards.com/design/bridge-size-blank-card-4332.html">this card printing service</a></li>'+
-      '<li>Default options are fine but more luxury is possible for example better finish or a <a href="">custom tuck box</a>.</li>'+
+      '<li>Default options are fine but more luxury is possible for example better finish or a <a href="https://nanocards.net/Tuckbox.jpg">custom tuck box</a>.</li>'+
       '<li>Select "Different images" as front</li>'+
       '<li>Upload all 55 pictures at once. Then press "help me autofill images".</li>'+
       '<li>Skip the text option and do the same for backside but "same image" and upload the "card_back.png".</li>'+
@@ -274,7 +274,7 @@ class App extends Component {
       '<li>Finalize the order and pay.</li>'+
     '</ol>'
 
-    this.playInstructions = '<h6><strong>How to Play<br /></strong></h6>'+
+    this.playInstructions = '<h6><strong>How to Play (<a href="https://youtu.be/0GNr5DCffHk">Gameplay video!</a>)<br /></strong></h6>'+
     '<ol>'+
       '<li>A wallet that can both pay and receive Nano by QR is required like <a href="https://natrium.io/">Natrium</a></li>'+
       '<li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>'+
@@ -291,8 +291,8 @@ class App extends Component {
       '<li><strong>HACKER (Choose 1 or 2):</strong><br />1. Steal a card from an opponent (who will then take a new card from the stack)<br />2a. Chose an opponent to pay one of your EVENT or DATA BREACH cards (both cards consumed)<br />2b. If the hacker attempt is blocked by a FIREWALL, pay your own card or use another FIREWALL to bounce it back</li>'+
       '<li><strong>FIREWALL:</strong><br />1. Blocks ONE HACKER attempt. If a forced pay: The hacker will now pay that card, if not using another FIREWALL<br />2. Blocks ONE DATA BREACH card that the previous player put on you (both cards destroyed)</li>'+
       '<li><strong>BEST PRACTISE:</strong> Blocks ONE EVENT card that the previous player put on you (both cards destroyed)'+
-      '<li><strong>DOUBLE SPEED:<br /></strong> 1. The owner will play two cards of same or different type<br />2. 2x HACKER or DATA BREACH: One FIREWALL is enough. | 2x EVENT: One BEST PRACTISE is enough. <br />3. You can only use ONE DOUBLE SPEED per turn<br />4. Cannot be combined with DISCONNECTED</li>'+
-      '<li><strong>DISCONNECTED:</strong> Skips one turn, even if the previous player used double HACKER, EVENT or DATA BREACH on you</li>'+
+      '<li><strong>DOUBLE SPEED:<br /></strong> 1. The owner will play two cards of same or different type<br />2. 2x HACKER or DATA BREACH: Two FIREWALLS are needed. | 2x EVENT: Two BEST PRACTISE are needed. <br />3. You can only use ONE DOUBLE SPEED per turn<br />4. Cannot be combined with DISCONNECTED</li>'+
+      '<li><strong>DISCONNECTED:</strong> Skips one turn, but only when it\'s your turn! No effect against hacking.</li>'+
     '</ul>'+
     '<h6><strong>Extra Rules<br /></strong></h6>'+
     '<ul>'+
