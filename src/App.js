@@ -83,8 +83,8 @@ class App extends Component {
           this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"), this.getCardByName("Firewall_b"),
         ],
         [
-          this.getCardByName("Practise_b"), this.getCardByName("Practise_b"), this.getCardByName("Practise_b"), this.getCardByName("Practise_b"),
-          this.getCardByName("Practise_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"),
+          this.getCardByName("Practice_b"), this.getCardByName("Practice_b"), this.getCardByName("Practice_b"), this.getCardByName("Practice_b"),
+          this.getCardByName("Practice_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Double_b"),
         ],
         [
           this.getCardByName("Double_b"), this.getCardByName("Double_b"), this.getCardByName("Disconnected_b"), this.getCardByName("Disconnected_b"),
@@ -115,8 +115,8 @@ class App extends Component {
           this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"), this.getCardByName("Firewall_w"),
         ],
         [
-          this.getCardByName("Practise_w"), this.getCardByName("Practise_w"), this.getCardByName("Practise_w"), this.getCardByName("Practise_w"),
-          this.getCardByName("Practise_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"),
+          this.getCardByName("Practice_w"), this.getCardByName("Practice_w"), this.getCardByName("Practice_w"), this.getCardByName("Practice_w"),
+          this.getCardByName("Practice_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Double_w"),
         ],
         [
           this.getCardByName("Double_w"), this.getCardByName("Double_w"), this.getCardByName("Disconnected_w"), this.getCardByName("Disconnected_w"),
@@ -147,8 +147,8 @@ class App extends Component {
           this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"), this.getCardByName("Firewall_b_pro"),
         ],
         [
-          this.getCardByName("Practise_b_pro"), this.getCardByName("Practise_b_pro"), this.getCardByName("Practise_b_pro"), this.getCardByName("Practise_b_pro"),
-          this.getCardByName("Practise_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"),
+          this.getCardByName("Practice_b_pro"), this.getCardByName("Practice_b_pro"), this.getCardByName("Practice_b_pro"), this.getCardByName("Practice_b_pro"),
+          this.getCardByName("Practice_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"),
         ],
         [
           this.getCardByName("Double_b_pro"), this.getCardByName("Double_b_pro"), this.getCardByName("Disconnected_b_pro"), this.getCardByName("Disconnected_b_pro"),
@@ -179,8 +179,8 @@ class App extends Component {
           this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"), this.getCardByName("Firewall_w_pro"),
         ],
         [
-          this.getCardByName("Practise_w_pro"), this.getCardByName("Practise_w_pro"), this.getCardByName("Practise_w_pro"), this.getCardByName("Practise_w_pro"),
-          this.getCardByName("Practise_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"),
+          this.getCardByName("Practice_w_pro"), this.getCardByName("Practice_w_pro"), this.getCardByName("Practice_w_pro"), this.getCardByName("Practice_w_pro"),
+          this.getCardByName("Practice_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"),
         ],
         [
           this.getCardByName("Double_w_pro"), this.getCardByName("Double_w_pro"), this.getCardByName("Disconnected_w_pro"), this.getCardByName("Disconnected_w_pro"),
@@ -286,12 +286,12 @@ class App extends Component {
     '<h6><strong>Card Index<br /></strong></h6>'+
     '<ul>'+
       '<li><strong>PAYOUT (Dashed frame):</strong> The owner scan to sweep full amount (Natrium: "Load from paper wallet"). GAME OVER.</li>'+
-      '<li><strong>EVENT (Single frame):</strong> The next player send the amount encoded in the QR. Can be blocked with a BEST PRACTISE.</li>'+
+      '<li><strong>EVENT (Single frame):</strong> The next player send the amount encoded in the QR. Can be blocked with a BEST PRACTICE.</li>'+
       '<li><strong>DATA BREACH (Double frame):</strong> The next player send the amount encoded in the QR. Can be blocked with a FIREWALL.</li>'+
       '<li><strong>HACKER (Choose 1 or 2):</strong><br />1. Steal a card from an opponent (who will then take a new card from the stack)<br />2a. Chose an opponent to pay one of your EVENT or DATA BREACH cards (both cards consumed)<br />2b. If the hacker attempt is blocked by a FIREWALL, pay your own card or use another FIREWALL to bounce it back</li>'+
       '<li><strong>FIREWALL:</strong><br />1. Blocks ONE HACKER attempt. If a forced pay: The hacker will now pay that card, if not using another FIREWALL<br />2. Blocks ONE DATA BREACH card that the previous player put on you (both cards destroyed)</li>'+
-      '<li><strong>BEST PRACTISE:</strong> Blocks ONE EVENT card that the previous player put on you (both cards destroyed)'+
-      '<li><strong>DOUBLE SPEED:<br /></strong> 1. The owner will play two cards of same or different type<br />2. 2x HACKER or DATA BREACH: Two FIREWALLS are needed. | 2x EVENT: Two BEST PRACTISE are needed. <br />3. You can only use ONE DOUBLE SPEED per turn<br />4. Cannot be combined with DISCONNECTED</li>'+
+      '<li><strong>BEST PRACTICE:</strong> Blocks ONE EVENT card that the previous player put on you (both cards destroyed)'+
+      '<li><strong>DOUBLE SPEED:<br /></strong> 1. The owner will play two cards of same or different type<br />2. 2x HACKER or DATA BREACH: Two FIREWALLS are needed. | 2x EVENT: Two BEST PRACTICE are needed. <br />3. You can only use ONE DOUBLE SPEED per turn<br />4. Cannot be combined with DISCONNECTED</li>'+
       '<li><strong>DISCONNECTED:</strong> Skips one turn, but only when it\'s your turn! No effect against hacking.</li>'+
     '</ul>'+
     '<h6><strong>Extra Rules<br /></strong></h6>'+
