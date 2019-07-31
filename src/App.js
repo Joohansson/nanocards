@@ -274,7 +274,7 @@ class App extends Component {
       '<li>Finalize the order and pay.</li>'+
     '</ol>'
 
-    this.playInstructions = '<h6><strong>How to Play (<a href="https://youtu.be/0GNr5DCffHk">Gameplay video!</a>)<br /></strong></h6>'+
+    this.playInstructions = '<h6><strong>How to Play (<a href="https://youtu.be/ZduE81-HIvc">Gameplay video!</a>)<br /></strong></h6>'+
     '<ol>'+
       '<li>A wallet that can both pay and receive Nano by QR is required like <a href="https://natrium.io/">Natrium</a></li>'+
       '<li>If more than 6 players, two (or more) decks of cards are recommended (same or different set)</li>'+
