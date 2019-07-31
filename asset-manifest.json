@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "./static/css/main.8214afd5.chunk.css",
-    "main.js": "./static/js/main.eefea961.chunk.js",
-    "main.js.map": "./static/js/main.eefea961.chunk.js.map",
+    "main.js": "./static/js/main.287d1908.chunk.js",
+    "main.js.map": "./static/js/main.287d1908.chunk.js.map",
     "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
     "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
     "static/css/2.510409cd.chunk.css": "./static/css/2.510409cd.chunk.css",
     "static/js/2.70ed3b51.chunk.js": "./static/js/2.70ed3b51.chunk.js",
     "static/js/2.70ed3b51.chunk.js.map": "./static/js/2.70ed3b51.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.26685149feddaf11f40a6b7bbe686939.js": "./precache-manifest.26685149feddaf11f40a6b7bbe686939.js",
+    "precache-manifest.d2185feec8b80758d964de84fbc57439.js": "./precache-manifest.d2185feec8b80758d964de84fbc57439.js",
     "service-worker.js": "./service-worker.js",
     "static/css/2.510409cd.chunk.css.map": "./static/css/2.510409cd.chunk.css.map",
     "static/css/main.8214afd5.chunk.css.map": "./static/css/main.8214afd5.chunk.css.map",
@@ -48,9 +48,9 @@
     "static/media/payout_b_pro.png": "./static/media/payout_b_pro.3021ffbf.png",
     "static/media/payout_w.png": "./static/media/payout_w.c2d1843a.png",
     "static/media/payout_w_pro.png": "./static/media/payout_w_pro.f5e919de.png",
-    "static/media/practise_b.png": "./static/media/practise_b.9f8271f0.png",
-    "static/media/practise_b_pro.png": "./static/media/practise_b_pro.f0b0dd06.png",
-    "static/media/practise_w.png": "./static/media/practise_w.f01b3426.png",
-    "static/media/practise_w_pro.png": "./static/media/practise_w_pro.3d405fba.png"
+    "static/media/practice_b.png": "./static/media/practice_b.9f8271f0.png",
+    "static/media/practice_b_pro.png": "./static/media/practice_b_pro.f0b0dd06.png",
+    "static/media/practice_w.png": "./static/media/practice_w.f01b3426.png",
+    "static/media/practice_w_pro.png": "./static/media/practice_w_pro.3d405fba.png"
   }
 }
