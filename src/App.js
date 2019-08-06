@@ -270,7 +270,7 @@ class App extends Component {
       '<li>Select "Different images" as front</li>'+
       '<li>Upload all 55 pictures at once. Then press "help me autofill images".</li>'+
       '<li>Skip the text option and do the same for backside but "same image" and upload the "card_back.png".</li>'+
-      '<li>If you selected a custom tuck box: Choose "advanced mode" and upload <a href="https://github.com/Joohansson/nanocards/blob/master/public/Bridge25mm.pdf">this nano cards tuck box template</a>.</li>'+
+      '<li>If you selected a custom tuck box: Choose "advanced mode" and upload <a href="https://github.com/Joohansson/nanocards/raw/master/public/18.8mm_2.25x3.5_nano.ai">this nano cards tuck box template</a>.</li>'+
       '<li>Finalize the order and pay.</li>'+
     '</ol>'
 
