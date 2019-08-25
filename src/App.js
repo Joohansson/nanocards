@@ -408,9 +408,11 @@ class App extends Component {
       validated: true,
       valueMin: form.minVal.value,
       valueMax: form.maxVal.value
-     })
-
-    this.generateNewWallet(form.minVal.value, form.maxVal.value, false)
+    },
+    //Wait for state to finish or the new maxValue will be wrong
+    function() {
+      this.generateNewWallet(form.minVal.value, form.maxVal.value, false)
+    })
   }
 
   /* Shuffle a given array */
@@ -578,8 +580,8 @@ class App extends Component {
         this.setState({
           activeCardTexts: ['',this.cardTextsPayData[0],this.cardTextsPayData[1],this.cardTextsPayData[2],
           this.cardTextsPayData[3],this.cardTextsPayData[4],this.cardTextsPay[0],this.cardTextsPay[1]],
-          activePayments: ['0',this.nanoToRaw(this.valueMax),this.nanoToRaw(this.valueMax),this.nanoToRaw(this.valueMax),
-          this.nanoToRaw(this.valueMax),this.nanoToRaw(this.valueMax),this.randomPayments[0],this.randomPayments[1]]
+          activePayments: ['0',this.nanoToRaw(this.state.valueMax),this.nanoToRaw(this.state.valueMax),this.nanoToRaw(this.state.valueMax),
+          this.nanoToRaw(this.state.valueMax),this.nanoToRaw(this.state.valueMax),this.randomPayments[0],this.randomPayments[1]]
         });
         break
       case '1':
