@@ -240,6 +240,7 @@ class App extends Component {
       '<li>By choosing clever cards you will make your friends pay</li>'+
       '<li>The winner will receive the full pot in each game</li>'+
       '<li>It\'s a fun and educational alternative to physical money and by using a feeless and fast cryptocurrency it allows you to play with very small or very large amounts. Also with a <a href="https://nanocrawler.cc/">public ledger</a> for full payment history. No more need for pennies!</li>'+
+      '<li><a href="https://discord.gg/RVCuFvc">Discord Support</a></li>'+
     '</ul>'
 
     this.cardPrepare = '<h6><strong>Prepare the cards<br /></strong></h6>'+
@@ -266,7 +267,7 @@ class App extends Component {
       '<li>Copy the script to the folder where you downloaded the images.<br />Windows: Run the bat file | Linux/Mac: Make the script executable (chmod +x cut.sh) and run it (./cut.sh)</li>'+
       '<li>It will cut out all 55 cards including the backside card.<br /><strong>WARNING:</strong> You may not want to send the Nano seed QR to a third party as they could potentially take all nano you are playing with. As a safe option, a card_1_01_safe.png is also created as an alternative to the PAYOUT card. It\'s suggestion you send this instead and print and glue the original QR on the real card later.</li>'+
       '<li>Go to <a href="https://www.makeplayingcards.com/design/bridge-size-blank-card-4332.html">this card printing service</a></li>'+
-      '<li>Default options are fine but more luxury is possible for example better finish or a <a href="https://nanocards.net/Tuckbox.jpg">custom tuck box</a>.</li>'+
+      '<li>Default options are fine but more luxury is possible for example better finish or a <a href="https://cards.nanos.cc/Tuckbox.jpg">custom tuck box</a>.</li>'+
       '<li>Select "Different images" as front</li>'+
       '<li>Upload all 55 pictures at once. Then press "help me autofill images".</li>'+
       '<li>Skip the text option and do the same for backside but "same image" and upload the "card_back.png".</li>'+
