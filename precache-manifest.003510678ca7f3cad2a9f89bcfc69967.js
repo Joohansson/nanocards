@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c9a6caa6e712d9126df64e12c4a2a46e",
+    "revision": "efeaf0ecf5af1782187178e6ee7fb2c3",
     "url": "./index.html"
   },
   {
-    "revision": "45070372243a7b5968ef",
+    "revision": "034db44377aa9eab3b3e",
     "url": "./static/css/2.510409cd.chunk.css"
   },
   {
-    "revision": "f54e2d8e6955f44e3bdd",
-    "url": "./static/css/main.5db83df5.chunk.css"
+    "revision": "e4907141e81f822e4d27",
+    "url": "./static/css/main.8214afd5.chunk.css"
   },
   {
-    "revision": "45070372243a7b5968ef",
-    "url": "./static/js/2.afde893e.chunk.js"
+    "revision": "034db44377aa9eab3b3e",
+    "url": "./static/js/2.70ed3b51.chunk.js"
   },
   {
-    "revision": "f54e2d8e6955f44e3bdd",
-    "url": "./static/js/main.3999f4ec.chunk.js"
+    "revision": "e4907141e81f822e4d27",
+    "url": "./static/js/main.996e9d3c.chunk.js"
   },
   {
     "revision": "8c97409f0ee389fe75da",
@@ -72,12 +72,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/Nunito-Light.64365c70.eot"
   },
   {
-    "revision": "a2dc67d0019e66ffa8b398c9ad9abaa3",
-    "url": "./static/media/backside_b.a2dc67d0.png"
+    "revision": "50b4b3c395a0a6feededcfaa82b6e0f3",
+    "url": "./static/media/backside_b.50b4b3c3.png"
   },
   {
-    "revision": "c5930a85e3894eff86224de69c5a556f",
-    "url": "./static/media/backside_w.c5930a85.png"
+    "revision": "725fd53b02d6a5bd6a725937592034ae",
+    "url": "./static/media/backside_w.725fd53b.png"
   },
   {
     "revision": "debd9e33018a2caaf467158641b46a87",
